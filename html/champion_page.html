@@ -1,0 +1,146 @@
+<style>
+
+/* --------------- Font Face --------------- */
+@font-face{
+
+	/*font type 1*/
+	font-family: 'Playball Regular';
+	src: url('../font/Playball-Regular.ttf');
+
+	/*font type 2*/
+	font-family: 'BeaufortforLOL-Bold';
+	src: url('../font/BeaufortforLOL-Bold.woff.ttf');
+}
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>League of Legends</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<!-- font Awesome -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap_css/bootstrap.min.css"/>
+	<script src="../js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style_lol.css"/>
+
+	<!-- JS/JQ -->
+	<script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+	<script type="text/javascript" src="../js/javascript_lol.js"></script>
+	
+
+</head>
+
+	
+<body class="body-champion-menu bg-two">
+
+
+<!---------------------------  Header --------------------------->
+<nav class="header">
+
+	<input type="checkbox" id="check">
+	<label for="check">
+		<i class="fas fa-bars" id="btn"></i>
+		<i class="fas fa-times" id="cancel"></i>
+	</label>
+
+	<a href="home_page.html" title="League of Legends" class="logo">
+		<img src="../resources/images/lol_logo.png" class="logo_image" width="50px">
+	</a>
+
+	
+	<ul class="menu">
+		<li>
+			<a href="home_page.html" title="Home">Home</a>
+		</li>
+		<li>
+			<a href="champion_page.html" title="Champions">Champions</a>
+		</li>
+		<li>
+			<a href="game_page.html" title="Quiz Game">Quiz Game</a>
+		</li>
+	</ul>
+</nav>
+
+
+<br><br><br>
+
+
+<div class="wrapper-champion-menu">
+
+	<h2>Champions</h2>
+	<hr>
+
+
+	<script>	
+
+		//Champion Selection Menu
+		champions_selection = [{bg: "bg-champion-ahri", page: "ahri_page", title: "Ahri"}, {bg: "bg-champion-akali", page: "akali_page", title: "Akali"}, {bg: "bg-champion-galio", page: "galio_page", title: "Galio"}, {bg: "bg-champion-janna", page: "janna_page", title: "Janna"}, {bg: "bg-champion-jinx", page: "jinx_page", title: "Jinx"}, {bg: "bg-champion-nasus", page: "nasus_page", title: "Nasus"}];
+
+		for(i = 0; i < champions_selection.length; i++){
+
+		document.write("<div class='parent-champion-menu'>");
+			document.write("<div class='child-champion-menu "+champions_selection[i].bg+"'>");
+				document.write("<a href='"+champions_selection[i].page+".html' title='"+champions_selection[i].title+"' class='champion-name-menu'>"+champions_selection[i].title+"</a>");
+			document.write("</div>");
+		document.write("</div>");
+		}
+
+	</script>
+
+</div>
+
+<br><br><br>
+
+
+
+<!---------------------------  Scroll to Top Button --------------------------->
+<a href="#" class="scroll-to-top" title="Scroll Top">
+	<i class="fas fa-chevron-up"></i>
+</a>
+
+
+<!--------------------------- Footer --------------------------->
+<div class="box-footer">
+    <footer class="footer">
+    	<!----- Logo ----->
+    	<a href="home_page.html">
+    		<img src="../resources/images/lol_logo.png" width="50px">
+    	</a>
+
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="home_page.html" title="Home">Home</a></li>
+            <li class="list-inline-item"><a href="champion_page.html" title="Champions">Champions</a></li>
+            <li class="list-inline-item"><a href="game_page.html" title="Quiz Game">Quiz Game</a></li>
+        </ul>
+
+        <p class="footer-desc">League of Legends is a team-based strategy game where two teams of five powerful champions face off to destroy the other's base. Choose from over 140 champions to make epic plays, secure kills, and take down towers as you battle your way to victory.</p>
+
+        <div class="social">
+        	<a href="https://www.instagram.com/leagueoflegends/?hl=en" target="_blank" title="Instagram"><i class="icon ion-social-instagram"></i></a>
+        	<a href="https://www.youtube.com/user/RiotGamesInc" target="_blank"  title="Youtube"><i class="icon ion-social-youtube"></i></a>
+        	<a href="https://www.facebook.com/leagueoflegends/" target="_blank" title="Facebook"><i class="icon ion-social-facebook"></i></a>
+        </div>
+        <hr class="footer-hr">
+        <p class="copyright">Copyright &copy; 2021 All Rights Reserved by Andrew Hew Jun Sheng.</p>
+    </footer>
+</div>
+
+
+
+</body>
+
+
+</html>

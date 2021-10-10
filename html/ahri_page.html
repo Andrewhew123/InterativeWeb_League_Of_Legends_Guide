@@ -1,0 +1,835 @@
+<style>
+
+/* --------------- Font Face --------------- */
+@font-face{
+
+	/*font type 1*/
+	font-family: 'Playball Regular';
+	src: url('../font/Playball-Regular.ttf');
+
+	/*font type 2*/
+	font-family: 'BeaufortforLOL-Bold';
+	src: url('../font/BeaufortforLOL-Bold.woff.ttf');
+}
+</style>
+
+
+
+
+<script>
+//Audio
+var sound = null;
+var playing = false;
+
+
+function init(){
+
+	narrator_audio();
+
+	champion_ability();
+
+	builds_selection();
+	
+}
+
+
+//-------------------- champion audio --------------------
+function setBool(){
+	playing = true;
+}
+
+function playSound(){
+
+	narrator = document.getElementById("narrator");
+	audio_output = document.getElementById("audio-output");
+
+
+	if (!playing) {
+		sound.play();
+		narrator.src = "../resources/images/audio-on2.gif";
+		playing=true;
+
+		audio_output.textContent = "Audio On";
+
+	}else{
+		narrator.src = "../resources/images/audio-off2.png";
+		sound.pause();
+		playing=false;
+
+		audio_output.textContent = "Audio Off";
+
+	}
+}
+
+function narrator_audio(){
+
+	sound = document.getElementById("sound");
+	document.getElementById("narrator").addEventListener("click", playSound, true);
+	sound.addEventListener("playing", setBool, true);
+
+
+	sound.addEventListener("ended", function() 
+	{	
+		narrator = document.getElementById("narrator");
+		audio_output = document.getElementById("audio-output");
+
+		narrator.src = "../resources/images/audio-off2.png";
+		audio_output.textContent = "Press Audio";
+
+	});
+}
+
+
+
+//-------------------- champion ability --------------------
+function champion_ability(){
+
+	champion_ability1 = document.querySelector("#champion-ability1");
+	champion_ability2 = document.querySelector("#champion-ability2");
+	champion_ability3 = document.querySelector("#champion-ability3");
+	champion_ability4 = document.querySelector("#champion-ability4");
+
+	video_ability1 = document.querySelector(".video-ability1");
+	video_ability2 = document.querySelector(".video-ability2");
+	video_ability3 = document.querySelector(".video-ability3");
+	video_ability4 = document.querySelector(".video-ability4");
+
+	details_ability1 = document.querySelector(".ability1-details");
+	details_ability2 = document.querySelector(".ability2-details");
+	details_ability3 = document.querySelector(".ability3-details");
+	details_ability4 = document.querySelector(".ability4-details");
+
+
+	champion_ability1.addEventListener("click", function(){
+
+		details_ability1.style.display = "block";
+		details_ability2.style.display = "none";
+		details_ability3.style.display = "none";
+		details_ability4.style.display = "none";
+
+		//detail champion animation
+		details_ability1.style.animationName = "fadeDown";
+		details_ability1.style.animationDuration = "1s";
+		details_ability1.style.animationFillMode = "forwards";
+
+		video_ability1.style.display = "block";
+		video_ability2.style.display = "none";
+		video_ability3.style.display = "none";
+		video_ability4.style.display = "none";
+
+		video_ability1.currentTime = "0";
+
+		//video animation
+		video_ability1.style.animationName = "anim_opacity";
+		video_ability1.style.animationDuration = "1s";
+		video_ability1.style.animationFillMode = "forwards";
+
+
+
+		this.style.border = "1px solid white";
+		this.style.borderRadius = "10px";
+		this.style.boxShadow = "0 0 10px white";
+
+		champion_ability2.style.border = "none";
+		champion_ability2.style.boxShadow = "none";
+
+		champion_ability3.style.border = "none";
+		champion_ability3.style.boxShadow = "none";
+
+		champion_ability4.style.border = "none";
+		champion_ability4.style.boxShadow = "none";
+		
+
+	}, false);
+
+
+	champion_ability2.addEventListener("click", function(){
+
+		details_ability1.style.display = "none";
+		details_ability2.style.display = "block";
+		details_ability3.style.display = "none";
+		details_ability4.style.display = "none";
+
+		//detail champion animation
+		details_ability2.style.animationName = "fadeDown";
+		details_ability2.style.animationDuration = "1s";
+		details_ability2.style.animationFillMode = "forwards";
+
+		video_ability1.style.display = "none";
+		video_ability2.style.display = "block";
+		video_ability3.style.display = "none";
+		video_ability4.style.display = "none";
+
+		video_ability2.currentTime = "0";
+
+		//video animation
+		video_ability2.style.animationName = "anim_opacity";
+		video_ability2.style.animationDuration = "1s";
+		video_ability2.style.animationFillMode = "forwards";
+
+
+
+		this.style.border = "1px solid white";
+		this.style.borderRadius = "10px";
+		this.style.boxShadow = "0 0 10px white";
+
+		champion_ability1.style.border = "none";
+		champion_ability1.style.boxShadow = "none";
+
+		champion_ability3.style.border = "none";
+		champion_ability3.style.boxShadow = "none";
+
+		champion_ability4.style.border = "none";
+		champion_ability4.style.boxShadow = "none";
+
+
+	}, false);
+
+
+	champion_ability3.addEventListener("click", function(){
+
+		details_ability1.style.display = "none";
+		details_ability2.style.display = "none";
+		details_ability3.style.display = "block";
+		details_ability4.style.display = "none";
+
+		//detail champion animation
+		details_ability3.style.animationName = "fadeDown";
+		details_ability3.style.animationDuration = "1s";
+		details_ability3.style.animationFillMode = "forwards";
+
+		video_ability1.style.display = "none";
+		video_ability2.style.display = "none";
+		video_ability3.style.display = "block";
+		video_ability4.style.display = "none";
+
+		video_ability3.currentTime = "0";
+
+		//video animation
+		video_ability3.style.animationName = "anim_opacity";
+		video_ability3.style.animationDuration = "1s";
+		video_ability3.style.animationFillMode = "forwards";
+
+
+
+		this.style.border = "1px solid white";
+		this.style.borderRadius = "10px";
+		this.style.boxShadow = "0 0 10px white";
+
+		champion_ability1.style.border = "none";
+		champion_ability1.style.boxShadow = "none";
+
+		champion_ability2.style.border = "none";
+		champion_ability2.style.boxShadow = "none";
+
+		champion_ability4.style.border = "none";
+		champion_ability4.style.boxShadow = "none";
+
+	}, false);
+
+
+
+	champion_ability4.addEventListener("click", function(){
+
+		details_ability1.style.display = "none";
+		details_ability2.style.display = "none";
+		details_ability3.style.display = "none";
+		details_ability4.style.display = "block";
+
+		//detail champion animation
+		details_ability4.style.animationName = "fadeDown";
+		details_ability4.style.animationDuration = "1s";
+		details_ability4.style.animationFillMode = "forwards";
+
+		video_ability1.style.display = "none";
+		video_ability2.style.display = "none";
+		video_ability3.style.display = "none";
+		video_ability4.style.display = "block";
+
+		video_ability4.currentTime = "0";
+
+		//video animation
+		video_ability4.style.animationName = "anim_opacity";
+		video_ability4.style.animationDuration = "1s";
+		video_ability4.style.animationFillMode = "forwards";
+
+
+
+		this.style.border = "1px solid white";
+		this.style.borderRadius = "10px";
+		this.style.boxShadow = "0 0 10px white";
+
+		champion_ability1.style.border = "none";
+		champion_ability1.style.boxShadow = "none";
+
+		champion_ability2.style.border = "none";
+		champion_ability2.style.boxShadow = "none";
+
+		champion_ability3.style.border = "none";
+		champion_ability3.style.boxShadow = "none";
+
+	}, false);
+}
+
+
+
+//-------------------- Core Items / Starter Items / Boots --------------------
+function builds_selection(){
+
+
+	core_items_option = document.querySelector("#core-items-option");
+	starter_items_option = document.querySelector("#starter-items-option");
+	boots_option = document.querySelector("#boots-option");
+
+	core_items = document.querySelector(".table-core-items");
+	starter_items = document.querySelector(".table-starter-items");
+	boots = document.querySelector(".table-boots");
+
+
+	core_items_option.addEventListener("click", function(){
+
+		this.style.backgroundColor = "#4d4d4d";
+		starter_items_option.style.backgroundColor = "#343a40";
+		boots_option.style.backgroundColor = "#343a40";
+
+		this.style.color = "#ffffff";
+		starter_items_option.style.color = "#aaa";
+		boots_option.style.color = "#aaa";
+
+		core_items.style.display = "table";
+		starter_items.style.display = "none";
+		boots.style.display = "none";
+
+		core_items.style.animationName = "fadeLeft";
+		core_items.style.animationDuration = "1s";
+		core_items.style.animationFillMode = "forwards";
+
+	}, false);
+
+	starter_items_option.addEventListener("click", function(){
+		
+		core_items_option.style.backgroundColor = "#343a40";
+		this.style.backgroundColor = "#4d4d4d";
+		boots_option.style.backgroundColor = "#343a40";
+
+		core_items_option.style.color = "#aaa";
+		this.style.color = "#ffffff";
+		boots_option.style.color = "#aaa";
+
+		core_items.style.display = "none";
+		starter_items.style.display = "table";
+		boots.style.display = "none";
+
+		starter_items.style.animationName = "fadeLeft";
+		starter_items.style.animationDuration = "1s";
+		starter_items.style.animationFillMode = "forwards";
+
+
+	}, false);
+
+	boots_option.addEventListener("click", function(){
+		
+		core_items_option.style.backgroundColor = "#343a40";
+		starter_items_option.style.backgroundColor = "#343a40";
+		this.style.backgroundColor = "#4d4d4d";
+
+		core_items_option.style.color = "#aaa";
+		starter_items_option.style.color = "#aaa";
+		this.style.color = "#ffffff";
+
+		core_items.style.display = "none";
+		starter_items.style.display = "none";
+		boots.style.display = "table";
+
+		boots.style.animationName = "fadeLeft";
+		boots.style.animationDuration = "1s";
+		boots.style.animationFillMode = "forwards";
+
+	}, false);
+
+}
+
+
+
+window.addEventListener("load", init, false);
+
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>League of Legends</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<!-- font Awesome -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap_css/bootstrap.min.css"/>
+	<script src="../js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style_lol.css"/>
+
+	<!-- JS/JQ -->
+	<script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+	<script type="text/javascript" src="../js/javascript_lol.js"></script>
+	
+	
+
+</head>
+	
+
+	
+<body class="body-champion bg-one">  
+
+<!---------------------------  Header --------------------------->
+<nav class="header">
+
+	<input type="checkbox" id="check">
+	<label for="check">
+		<i class="fas fa-bars" id="btn"></i>
+		<i class="fas fa-times" id="cancel"></i>
+	</label>
+
+	<a href="home_page.html" title="League of Legends" class="logo">
+		<img src="../resources/images/lol_logo.png" class="logo_image" width="50px">
+	</a>
+
+	
+	<ul class="menu">
+		<li>
+			<a href="home_page.html" title="Home">Home</a>
+		</li>
+		<li>
+			<a href="champion_page.html" title="Champions">Champions</a>
+		</li>
+		<li>
+			<a href="game_page.html" title="Quiz Game">Quiz Game</a>
+		</li>
+	</ul>
+</nav>
+
+
+<br><br><br>
+
+<div class="container container-champion-profile">
+	
+
+	<img src="../resources/ahri/ahri_bg.jpg" class="champion-bg">
+
+	<h1 class="champion">Ahri</h1>
+
+	<br><br>
+
+
+	<div class="row row-diff-roles-desc">
+
+		<div class="col-md-6 col-xs-12 my-auto box-diff-roles">	
+			<ul class="ul-diff-roles">
+
+				<!---------- Champion Roles ---------->
+				<li class="text-center">
+					<div>
+						<img src="../resources/images/mage.png" class="img-fluid img-roles" alt="Responsive image" width="60px">
+					</div>
+					<div>
+						<h6 style="color: white">ROLE</h6>
+						<h6 style="color: #F5BA11">MAGE</h6>
+					</div>
+				</li>
+
+				<!---------- Champion Difficulty ---------->
+				<li class="text-center">
+					<div>
+					<img src="../resources/images/difficulty_2.png" class="img-fluid img-diff" alt="Responsive image" width="100px">
+					</div>
+					<div>
+						<h6 style="color: white">DIFFICULTY</h6>
+						<h6 style="color: #F5BA11">MODERATE</h6>
+					</div>
+				</li>	
+
+				<!---------- Champion Audio Icon ---------->
+				<li class="text-center align-middle pt-4">
+					<div>
+						<img id="narrator" src="../resources/images/audio-off2.png" alt="Responsive image" class="img-fluid" width="50px"/>
+					</div>
+					<div class="pt-2">
+						<h6 style="color: white" id="audio-output">Press Audio</h6>
+						
+					</div>
+				</li>	
+
+			</ul>		
+		</div>
+
+
+		<div class="col-md-6 col-xs-12 box-champion-desc my-auto">
+			<p class="champion-desc">Innately connected to the latent power of Runeterra, Ahri is a vastaya who can reshape magic into orbs of raw energy. She revels in toying with her prey by manipulating their emotions before devouring their life essence. Despite her predatory nature, Ahri retains a sense of empathy as she receives flashes of memory from each soul she consumes.</p>
+		</div>
+
+	</div>
+
+
+	<br><br><br>
+
+
+	<h3 class="ability-title">Abilities</h3>
+
+	<div class="row">
+
+		<div class="col-md-6 col-xs-12 box-video-ability">
+		    <div>
+		    	<!---------- Video (Ability 1) ---------->
+		
+				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability1">
+					<source src="../resources/ahri/ahri_ability1.webm" type="video/webm">
+				</video>
+
+
+				<!---------- Video (Ability 2) ---------->
+
+  				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability2">
+					<source src="../resources/ahri/ahri_ability2.webm" type="video/webm">
+				</video>
+
+				<!---------- Video (Ability 3) ---------->
+				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability3">
+					<source src="../resources/ahri/ahri_ability3.webm" type="video/webm">
+				</video>
+
+				<!---------- Video (Ability 4) ---------->
+				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability4">
+					<source src="../resources/ahri/ahri_ability4.webm" type="video/webm">
+				</video>
+		    			      
+		    </div>
+		</div>
+
+
+		<div class="col-md-6 col-xs-12">
+
+			<div class="box-champion-ability">
+
+				<!---------- Image Icon (Ability 1) ---------->
+				<img src="../resources/ahri/ahri_ability_icon1.PNG" class="champion-ability" id="champion-ability1" title="Orb of Deception">
+
+				<!---------- Image Icon (Ability 2) ---------->
+				<img src="../resources/ahri/ahri_ability_icon2.PNG" class="champion-ability" id="champion-ability2" title="Fox-Fire">
+
+				<!---------- Image Icon (Ability 3) ---------->
+				<img src="../resources/ahri/ahri_ability_icon3.PNG" class="champion-ability" id="champion-ability3" title="Charm">
+
+				<!---------- Image Icon (Ability 4) ---------->
+				<img src="../resources/ahri/ahri_ability_icon4.PNG" class="champion-ability" id="champion-ability4" title="Spirit Rush">
+
+			</div>
+
+			<!---------- Details (Ability 1) ---------->
+		    <div class="pt-3 ability1-details">
+		    	<p style="color: #aaa;">Q</p>
+		    	<h3 class="ability-name">ORB OF DECEPTION</h3>
+		    	<p class="text-justify">Ahri sends out and pulls back her orb, dealing magic damage on the way out and true damage on the way back.</p>
+		    </div>
+
+		    <!---------- Details (Ability 2) ---------->
+		    <div class="pt-3 ability2-details">
+		    	<p style="color: #aaa;">W</p>
+		    	<h3 class="ability-name">FOX-FIRE</h3>
+		    	<p class="text-justify">Ahri gains a brief burst of movement speed and releases three fox-fires, that lock onto and attack nearby enemies.</p>
+		    </div>
+
+		    <!---------- Details (Ability 3) ---------->
+		    <div class="pt-3 ability3-details">
+		    	<p style="color: #aaa;">E</p>
+		    	<h3 class="ability-name">CHARM</h3>
+		    	<p class="text-justify">Ahri blows a kiss that damages and charms an enemy it encounters, instantly stopping movement abilities and causing them to walk harmlessly towards her. The target temporarily takes increased damage from Ahri.</p>
+		    </div>
+
+		    <!---------- Details (Ability 4) ---------->
+		    <div class="pt-3 ability4-details">
+		    	<p style="color: #aaa;">R</p>
+		    	<h3 class="ability-name">SPIRIT RUSH</h3>
+		    	<p class="text-justify">Ahri dashes forward and fires essence bolts, damaging nearby enemies. Spirit Rush can be cast up to three times before going on cooldown.</p>
+		    </div>
+		</div>
+	</div>
+
+
+	<br><br>
+
+
+	<!---------- Champion Images ---------->
+	<div class="text-center box-img-champion">
+		<img src="../resources/ahri/ahri.png" class="img-fluid img-champion" width="60%" alt="Responsive image">
+	</div>
+
+	<div class="table-responsive-xl box-builds">
+
+		<h3 class="build-title">Builds</h3>
+
+		<!---------- Table Item Selection ---------->
+		<table class="table table-dark table-borderless">
+			<thead>
+				<tr class="text-center">
+					<th scope="col" id="core-items-option" title="Core Items" class="align-middle">Core Items</th>
+					<th scope="col" id="starter-items-option" title="Starter Items" class="align-middle">Starter Items</th>
+					<th scope="col" id="boots-option" title="Boots" class="align-middle">Boots</th>
+				</tr>
+			</thead>
+		</table>
+
+
+		<!---------- Table Core Items ---------->
+		<table class="table-core-items table table-dark table-hover">
+			<thead>
+			<tr>
+				<th scope="col" class="text-center" colspan="3">Core Items</th>	
+			</tr>
+			</thead>
+
+			<tbody>
+
+				<tr title="Everfrost">
+					<td class="align-middle">
+						<img src="../resources/items/everfrost.png" width="50px" style="border-radius: 30px;">
+					</td>
+					<td class="align-middle">Everfrost</td>
+					<td class="align-middle">
+						- 80 Ability Power<br>
+						- 250 Health<br>
+						- 600 Mana<br>
+						- 20 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">3400(450)</span>
+					</td>
+				</tr>
+
+				<tr title="Cosmic Drive">
+					<td class="align-middle">
+						<img src="../resources/items/cosmic_drive.png" width="50px">
+					</td>
+					<td class="align-middle">Cosmic Drive</td>
+					<td class="align-middle">
+						Massive amounts of Cooldown Reduction<br>
+						- 200 Health<br>
+						- 20 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">3000(865)</span>
+					</td>
+				</tr>
+
+				<tr title="Zhonya's Hourglass">
+					<td class="align-middle">
+						<img src="../resources/items/zhonya_hourglass.png" width="50px">
+					</td>
+					<td class="align-middle">Zhonya's Hourglass</td>
+					<td class="align-middle">
+						Activate to become invincible but unable to take actions<br>
+						- 65 Ability Power<br>
+						- 45 Armor<br>
+						- 10 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">2600(50)</span>
+					</td>
+				</tr>
+
+				<tr title="Morellonomicon">
+					<td class="align-middle">
+						<img src="../resources/items/morellonomicon.png" width="50px">
+					</td>
+					<td class="align-middle">Morellonomicon</td>
+					<td class="align-middle">
+						Increases Magic Damage<br>
+						- 80 Ability Power<br>
+						- 250 Health<br>
+						- 10 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">2500(450)</span>
+					</td>
+				</tr>
+
+				<tr title="Void Staff">
+					<td class="align-middle">
+						<img src="../resources/items/void_staff.png" width="50px">
+					</td>
+					<td class="align-middle">Void Staff</td>
+					<td class="align-middle">
+						Increase Magic Damage<br>
+						- 70 Ability Power<br>
+						- 40% Magic Penetration<br><br>
+						Cost: <span style="color: #FFBF00;">2700(600)</span>
+					</td>
+				</tr>
+
+			</tbody>
+			
+		</table>
+
+
+		<!---------- Table Starter Items ---------->
+		<table class="table-starter-items table table-dark table-hover">
+			<thead>
+			<tr>
+				<th scope="col" class="text-center" colspan="3">Starter Items</th>
+			</tr>
+			</thead>
+
+			<tbody>
+
+				<tr title="Corrupting Potion">
+					<td class="align-middle">
+						<img src="../resources/starter_items/corrupting_potion.png" width="50px">
+					</td>
+					<td class="align-middle">Corrupting Potion</td>
+					<td class="align-middle">
+						Restores Health and Mana over time and boosts combat power<br><br>
+						Cost: <span style="color: #FFBF00;">500(350)</span>
+					</td>
+					
+				</tr>
+
+				<tr title="Doran's Ring">
+					<td class="align-middle">
+						<img src="../resources/starter_items/doran_ring.png" width="50px">
+					</td>
+					<td class="align-middle">Doran's Ring</td>
+					<td class="align-middle">
+						Good Starting Item for casters<br>
+						-15 Ability Power<br>
+						-70 Health<br><br>
+						Cost: <span style="color: #FFBF00;">400(400)</span>
+					</td>
+				</tr>
+
+				<tr title="Health Potion">
+					<td class="align-middle">
+						<img src="../resources/starter_items/health_potion.png" width="50px">
+					</td>
+					<td class="align-middle">Health Potion</td>
+					<td class="align-middle">
+						Consume to restore Health over time<br>
+						Restore 150 Health over 15 seconds<br><br>
+						Cost: <span style="color: #FFBF00;">50(50)</span>
+					</td>
+				</tr>
+
+			</tbody>
+			
+		</table>
+
+
+		<!---------- Table Boots ---------->
+		<table class="table-boots table table-dark table-hover">
+			<thead>
+			<tr>
+				<th scope="col" class="text-center" colspan="3">Boots</th>
+			</tr>
+			</thead>
+
+			<tbody>
+				<tr title="Ionian Boots of Lucidity">
+					<td class="align-middle">
+						<img src="../resources/boots/ionian_boots_of_lucidity.png" width="50px">
+					</td>
+					<td class="align-middle">Ionian Boots of Lucidity</td>
+					<td class="align-middle">
+						Increases Movement Speed and Cooldown Reduction<br>
+						- 20 Ability Haste<br>
+						- Sorcerer's Shoes<br>
+						- Mercury's Treads<br><br>
+						Cost: <span style="color: #FFBF00;">900(600)</span>
+					</td>
+				</tr>
+
+				<tr title="Sorcerer's Shoes">
+					<td class="align-middle">
+						<img src="../resources/boots/sorcerer_shoes.png" width="50px">
+					</td>
+					<td class="align-middle">Sorcerer's Shoes</td>
+					<td class="align-middle">
+						Enhances Movement Speed and Magic damage<br>
+						- 18 Magic Penetration<br>
+						- 45 Move Speed<br><br>
+						Cost: <span style="color: #FFBF00;">1100(800)</span>
+					</td>
+				</tr>
+
+				<tr title="Mercury's Treads">
+					<td class="align-middle">
+						<img src="../resources/boots/mercury_treads.png" width="50px">
+					</td>
+					<td class="align-middle">Mercury's Treads</td>
+					<td class="align-middle">
+						Increases Movement Speed and reduces duration of disabling effects<br>
+						- 25 Magic Resist<br>
+						- 45 Move Speed<br>
+						- 30% enacity<br><br>
+						Cost: <span style="color: #FFBF00;">1100(350)</span>
+					</td>
+				</tr>
+
+			</tbody>
+			
+		</table>
+
+
+	</div>
+
+
+
+
+</div>
+
+<br>
+
+<div class="box-environment">
+	<img src="../resources/images/lol_environment2.png" width="100%" class="bg-environment">
+</div>
+
+
+<!--------------------------- Footer --------------------------->
+<div class="box-footer">
+    <footer class="footer">
+    	<!----- Logo ----->
+    	<a href="home_page.html">
+    		<img src="../resources/images/lol_logo.png" width="50px">
+    	</a>
+
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="home_page.html" title="Home">Home</a></li>
+            <li class="list-inline-item"><a href="champion_page.html" title="Champions">Champions</a></li>
+            <li class="list-inline-item"><a href="game_page.html" title="Quiz Game">Quiz Game</a></li>
+        </ul>
+
+        <p class="footer-desc">League of Legends is a team-based strategy game where two teams of five powerful champions face off to destroy the other's base. Choose from over 140 champions to make epic plays, secure kills, and take down towers as you battle your way to victory.</p>
+
+        <div class="social">
+        	<a href="https://www.instagram.com/leagueoflegends/?hl=en" target="_blank" title="Instagram"><i class="icon ion-social-instagram"></i></a>
+        	<a href="https://www.youtube.com/user/RiotGamesInc" target="_blank" title="Youtube"><i class="icon ion-social-youtube"></i></a>
+        	<a href="https://www.facebook.com/leagueoflegends/" target="_blank" title="Facebook"><i class="icon ion-social-facebook"></i></a>
+        </div>
+        <hr class="footer-hr">
+        <p class="copyright">Copyright &copy; 2021 All Rights Reserved by Andrew Hew Jun Sheng.</p>
+    </footer>
+</div>
+
+
+<!---------- Audio champion ---------->
+<audio id="sound">
+	<source src="../resources/ahri/ahri_voice.mp3" type="audio/mp3" />
+</audio>
+
+
+<!---------------------------  Scroll to Top Button --------------------------->
+<a href="#" class="scroll-to-top" title="Scroll Top">
+	<i class="fas fa-chevron-up"></i>
+</a>
+
+
+</body>
+
+</html>

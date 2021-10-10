@@ -1,0 +1,252 @@
+<style>
+
+/* --------------- Font Face --------------- */
+@font-face{
+
+	/*font type 1*/
+	font-family: 'Playball Regular';
+	src: url('../font/Playball-Regular.ttf');
+
+	/*font type 2*/
+	font-family: 'BeaufortforLOL-Bold';
+	src: url('../font/BeaufortforLOL-Bold.woff.ttf');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial;
+	font-size: 17px;
+	height: 100%;
+	overflow: hidden;
+}
+
+#myVideo {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	z-index: -99;
+	margin: 0 auto;
+}
+
+
+@media (min-aspect-ratio: 16/9){
+	#myVideo {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-aspect-ratio: 16/9){
+	#myVideo {
+		width: auto;
+		height: 100%;
+	}
+}
+
+
+.container-lol-logo-name{
+	margin: 0 auto;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+	opacity: 0;
+	animation-name: fadeIn;
+	animation-delay: 14s;
+	animation-duration: 6s;
+	animation-fill-mode: forwards;
+}
+
+#lol-logo-name{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 280px;
+	height: 120px;
+	margin: 0 auto;
+	animation-name: pulse;
+	animation-iteration-count: infinite;
+	animation-delay: 16s;
+	animation-duration: 3s;
+	
+}
+
+.container-lol-into-title{
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.intro-title{
+	animation: glow 1s ease-in-out infinite alternate;
+}
+
+#intro-title{
+
+	opacity: 0;
+	animation: type 8s steps(20);
+	animation-delay: 5s;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 20px 20px 20px 20px;
+
+}
+
+
+.container-intro-content{
+	margin: 0 auto;
+	position: absolute;
+	bottom: 0;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	text-align: center;
+	opacity: 0;
+	width: 300px;
+	height: 150px;
+
+	animation-name: fadeInBottom;
+	animation-duration: 2s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+
+}
+
+
+#lol-logo{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#lol-logo:hover{
+	transform: scale(1.1);
+}
+
+.intro-content{
+	color: white;
+	margin: 0;
+	font-family: BeaufortforLOL-Bold;
+}
+
+
+
+</style>
+
+
+
+<script>
+
+	function init(){
+
+		setTimeout(function(){ window.location.href="home_page.html" }, 25000);
+
+		//-------------------- Audio Intro --------------------
+		audio_intro = new Audio("../resources/mp3/intro.mp3");
+		audio_intro.play();
+		audio_intro.volume = 0.2;
+		audio_intro.loop = true;
+
+
+		//-------------------- Audio Mouseover --------------------
+		audio_mouseover = new Audio("../resources/mp3/lol_mouseover.mp3");
+	
+		//-------------------- Audio Click --------------------
+		audio_click = new Audio("../resources/mp3/lol_click.mp3");
+
+
+
+		lol_click = document.querySelector("#lol-logo");
+
+
+		lol_click.addEventListener("mouseover", function(){
+			audio_mouseover.play();
+			audio_mouseover.volume = 1;
+
+		}, false);
+
+		lol_click.addEventListener("mouseout", function(){
+			audio_mouseover.pause();
+			audio_mouseover.currentTime = 0;
+		}, false);
+
+
+		lol_click.addEventListener("click", function(){
+
+			audio_click.play();
+			audio_click.volume = 0.8;
+
+		}, false);
+
+	}
+
+	function delayTime(){
+		window.location.href = "home_page.html";
+	}
+
+
+	window.addEventListener("load", init, false);
+
+</script>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Splash Screen Intro</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- font Awesome -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap_css/bootstrap.min.css"/>
+	<script src="../js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style_lol.css"/>
+
+	<!-- JS/JQ -->
+	<script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+	<script type="text/javascript" src="../js/javascript_lol.js"></script>
+	
+
+</head>
+
+
+<body>
+
+	<!---------- LoL Logo ---------->
+	<div class="container-lol-logo-name mt-5">
+		<img src="../resources/images/lol_logo_name.png" id="lol-logo-name">
+	</div>
+
+	<div class="container-lol-into-title">
+		<h2 id="intro-title" class="intro-title">Welcome to LoL Guide</h2>
+	</div>
+	
+
+	<div class="container-intro-content">
+		<p class="intro-content">CLICK TO SKIP</p>
+		<img src="../resources/images/lol_logo.png" id="lol-logo" onclick="setTimeout(delayTime, 1000)">
+	</div>
+
+
+	<!---------- Intro Video ---------->
+	<video autoplay loop muted id="myVideo">
+		<source src="../resources/video/intro.mp4" type="video/mp4">
+	</video>	
+
+
+</body>
+</html>

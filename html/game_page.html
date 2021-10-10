@@ -1,0 +1,822 @@
+<style>
+
+/* --------------- Font Face --------------- */
+@font-face{
+
+	/*font type 1*/
+	font-family: 'Playball Regular';
+	src: url('../font/Playball-Regular.ttf');
+
+	/*font type 2*/
+	font-family: 'BeaufortforLOL-Bold';
+	src: url('../font/BeaufortforLOL-Bold.woff.ttf');
+
+}
+
+
+.body-game{
+
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  	background-size: cover;
+  	width: 100%;
+
+}
+
+.container-quiz{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+.table-quiz td{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.table-quiz{
+	border-radius: 15px;
+	animation-name: fadeLeft;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.table-quiz2{
+	display: none;
+	animation-name: fadeLeft;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.roles-icon{
+	animation-name: pulse_out;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.box {
+	width:220px;
+	height:220px;
+	border: 2px solid rgba(255, 255, 255, .5);
+	border-radius: 15px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #5c5c5c;
+	padding-top: 5px;
+}
+
+.origin img{
+	margin-right: 5px;
+	margin-left: 5px;
+	cursor: pointer;
+	transition: 100ms;
+}
+
+.origin img:hover{
+	transform: scale(0.95);
+	box-shadow: 0 0 10px white;
+}
+
+td {
+	text-align:center;
+}
+
+#row_output_answer{
+	display: none;
+}
+
+#row_output_answer2{
+	display: none;
+}
+
+/*button*/
+.btnCheck{
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition: 500ms;
+	border-radius: 5px;
+}
+
+.btnCheck:hover{
+	background-color: #64DA68;
+}
+
+.btnReset{
+	background-color: #008CBA; /* Blue */
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition: 500ms;
+	border-radius: 5px;
+}
+
+.btnReset:hover{
+	background-color: #00A8DF;
+}
+
+#btnNextLvl{
+	background-color: #ea553b;
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition: 500ms;
+	border-radius: 5px;
+	display: none;
+}
+
+#btnNextLvl:hover{
+	background-color: #ee725c;
+}
+
+.btnAgain{
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition: 500ms;
+	border-radius: 5px;
+}
+
+.btnAgain:hover{
+	background-color: #64DA68;
+}
+
+.btnCancel{
+	background-color: #FB1E1E; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition: 500ms;
+	border-radius: 5px;
+}
+
+.btnCancel:hover{
+	background-color: #FA4A4A;
+}
+
+
+
+/* Mocal Box */
+.modal{
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	z-index: 1;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.modal-details {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	width: 50%;
+	text-align: center;
+	border-radius: 15px;
+	border: 1px solid #888;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation-name: fadeUp_modalbox;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	
+}
+
+.close {
+	font-size: 28px;
+	font-weight: bold;
+	color: #aaaaaa;
+	float: right;
+}
+
+.close:hover,
+.close:focus {
+	text-decoration: none;
+	cursor: pointer;
+	color: #000;
+
+}
+
+.success-icon{
+	transform: rotate(5deg);
+	animation-name: pulse_rotation;
+	animation-iteration-count: infinite;
+	animation-duration: 5s;
+}
+
+
+</style>
+
+
+<script>
+
+total = 0;
+function init(){
+
+	btnCheck = document.querySelector("#btnCheck");
+	btnReset = document.querySelector("#btnReset");
+	btnCheck2 = document.querySelector("#btnCheck2");
+	btnReset2 = document.querySelector("#btnReset2");
+	origin = document.querySelector("#origin");
+	origin2 = document.querySelector("#origin2");
+
+	//Champions
+	//Quiz 1
+	katarina = document.querySelector("#katarina");
+	alistar = document.querySelector("#alistar");
+	darius = document.querySelector("#darius");
+	lux = document.querySelector("#lux");
+	miss_fortune = document.querySelector("#miss_fortune");
+
+	
+	katarina.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+	
+	alistar.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+	
+	darius.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+
+	lux.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+
+	miss_fortune.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+
+
+	//Quiz 2
+	nami = document.querySelector("#nami");
+	garen = document.querySelector("#garen");
+	annie = document.querySelector("#annie");
+	tristana = document.querySelector("#tristana");
+	malphite = document.querySelector("#malphite");
+
+	nami.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+	
+	garen.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+	
+	annie.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+
+	tristana.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+
+	malphite.addEventListener("dragstart",function(evt){
+		evt.dataTransfer.setData("text",this.id);
+	},false);
+
+
+
+	//Box
+	boxes = document.getElementsByClassName("box");
+
+	//output answer
+	output_answer = document.getElementById("output_answer");
+	row_output_answer = document.getElementById("row_output_answer");
+	output_answer2 = document.getElementById("output_answer2");
+	row_output_answer2 = document.getElementById("row_output_answer2");
+	msg = "";
+
+	//Quiz Table
+	quiz1 = document.querySelector(".table-quiz");
+	quiz2 = document.querySelector(".table-quiz2");
+
+	btnNextLvl = document.querySelector("#btnNextLvl");
+
+	//modal box
+	modal = document.getElementById("myModal");
+	span = document.getElementsByClassName("close")[0];
+	btnAgain = document.getElementById("btnAgain");
+	btnCancel = document.getElementById("btnCancel");
+
+	
+	for(i=0;i<boxes.length;i++){
+		boxes[i].addEventListener("dragover",function(evt){
+			evt.preventDefault();
+		},false);
+		
+		boxes[i].addEventListener("drop",function(evt){
+			evt.preventDefault();
+			id=evt.dataTransfer.getData("text");
+			this.appendChild(document.getElementById(id));
+
+		},false);
+	}
+	
+	btnCheck.addEventListener("click",function(){
+
+		if(katarina.parentNode.id=="box1-quiz-one"){
+			total++;
+
+			document.getElementById("box1-quiz-one").style.borderColor = "#00FF00";
+		}else{
+			document.getElementById("box1-quiz-one").style.borderColor = "#FE2E2E";
+		}
+			
+		if(lux.parentNode.id=="box2-quiz-one"){
+			total++;
+
+			document.getElementById("box2-quiz-one").style.borderColor = "#00FF00";
+		}else{
+			document.getElementById("box2-quiz-one").style.borderColor = "#FE2E2E";
+		}
+			
+		if(miss_fortune.parentNode.id=="box3-quiz-one"){
+			total++;
+
+			document.getElementById("box3-quiz-one").style.borderColor = "#00FF00";
+		}else{
+			document.getElementById("box3-quiz-one").style.borderColor = "#FE2E2E";
+		}
+
+		row_output_answer.style.display = "table-row";
+
+
+		if (total == 3) {
+
+			msg = "Correct Answer: "+ total + "<br>Congratulations! You have answer all correct.";
+			output_answer.innerHTML = msg;
+
+			btnNextLvl.style.display = "inline-block";
+
+			total = 0;
+
+		}
+		else{
+			msg = "Correct Answer: "+ total + "<br>Please try again.";
+			output_answer.innerHTML = msg;
+
+			total = 0;
+		}
+		
+
+	},false);
+
+
+	btnCheck2.addEventListener("click",function(){
+
+		if(garen.parentNode.id=="box1-quiz-two"){
+			total++;
+
+			document.getElementById("box1-quiz-two").style.borderColor = "#00FF00";
+		}else{
+			document.getElementById("box1-quiz-two").style.borderColor = "#FE2E2E";
+		}
+			
+		if(malphite.parentNode.id=="box2-quiz-two"){
+			total++;
+
+			document.getElementById("box2-quiz-two").style.borderColor = "#00FF00";
+		}else{
+			document.getElementById("box2-quiz-two").style.borderColor = "#FE2E2E";
+		}
+			
+		if(nami.parentNode.id=="box3-quiz-two"){
+			total++;
+
+			document.getElementById("box3-quiz-two").style.borderColor = "#00FF00";
+		}else{
+			document.getElementById("box3-quiz-two").style.borderColor = "#FE2E2E";
+		}
+
+
+		row_output_answer2.style.display = "table-row";
+
+		if (total == 3) {
+
+			msg = "Correct Answer: "+ total + "<br>Congratulations! You have answer all correct.";
+			output_answer2.innerHTML = msg;
+			modal.style.display = "block";
+
+			total = 0;
+
+		}
+		else{
+			msg = "Correct Answer: "+ total + "<br>Please try again.";
+			output_answer2.innerHTML = msg;
+
+			total = 0;
+		}
+			
+
+	},false);
+
+
+	btnNextLvl.addEventListener("click", function(){
+
+		quiz1.style.display = "none";
+		quiz2.style.display = "table";
+
+		modal.style.display = "none";
+
+		origin2.appendChild(nami);
+		origin2.appendChild(garen);
+		origin2.appendChild(annie);
+		origin2.appendChild(tristana);
+		origin2.appendChild(malphite);
+
+		document.getElementById("box1-quiz-two").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box2-quiz-two").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box3-quiz-two").style.border = "2px solid rgba(255, 255, 255, .5)";
+
+		row_output_answer2.style.display = "none";
+
+	}, false);
+
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+
+	btnAgain.addEventListener("click", function(){
+
+		modal.style.display = "none";
+		quiz1.style.display = "table";
+		quiz2.style.display = "none";
+
+		origin.appendChild(miss_fortune);
+		origin.appendChild(alistar);
+		origin.appendChild(katarina);
+		origin.appendChild(darius);
+		origin.appendChild(lux);
+
+		document.getElementById("box1-quiz-one").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box2-quiz-one").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box3-quiz-one").style.border = "2px solid rgba(255, 255, 255, .5)";
+
+		row_output_answer.style.display = "none";
+		btnNextLvl.style.display = "none";
+
+		btnReset();
+
+	}, false);
+
+
+	btnCancel.addEventListener("click", function(){
+		modal.style.display = "none";
+	}, false);
+
+	
+	btnReset.addEventListener("click",function(){
+
+		origin.appendChild(miss_fortune);
+		origin.appendChild(alistar);
+		origin.appendChild(katarina);
+		origin.appendChild(darius);
+		origin.appendChild(lux);
+
+		document.getElementById("box1-quiz-one").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box2-quiz-one").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box3-quiz-one").style.border = "2px solid rgba(255, 255, 255, .5)";
+
+		row_output_answer.style.display = "none";
+		btnNextLvl.style.display = "none";
+
+		total = 0;
+	},false);
+
+	btnReset2.addEventListener("click",function(){
+
+		origin2.appendChild(nami);
+		origin2.appendChild(garen);
+		origin2.appendChild(annie);
+		origin2.appendChild(tristana);
+		origin2.appendChild(malphite);
+
+		document.getElementById("box1-quiz-two").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box2-quiz-two").style.border = "2px solid rgba(255, 255, 255, .5)";
+		document.getElementById("box3-quiz-two").style.border = "2px solid rgba(255, 255, 255, .5)";
+
+		row_output_answer2.style.display = "none";
+
+		total = 0;
+	},false);
+
+
+
+
+}
+
+window.addEventListener("load",init,false);
+
+</script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>League of Legends</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<!-- font Awesome -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap_css/bootstrap.min.css"/>
+	<script src="../js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style_lol.css"/>
+
+	<!-- JS/JQ -->
+	<script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+	<script type="text/javascript" src="../js/javascript_lol.js"></script>
+	
+
+</head>
+
+<body class="body-game bg-sky">
+	
+
+<!---------------------------  Header --------------------------->
+<nav class="header">
+
+	<input type="checkbox" id="check">
+	<label for="check">
+		<i class="fas fa-bars" id="btn"></i>
+		<i class="fas fa-times" id="cancel"></i>
+	</label>
+
+	<a href="home_page.html" title="League of Legends" class="logo">
+		<img src="../resources/images/lol_logo.png" class="logo_image" width="50px">
+	</a>
+
+	
+	<ul class="menu">
+		<li>
+			<a href="home_page.html" title="Home">Home</a>
+		</li>
+		<li>
+			<a href="champion_page.html" title="Champions">Champions</a>
+		</li>
+		<li>
+			<a href="game_page.html" title="Quiz Game">Quiz Game</a>
+		</li>
+	</ul>
+</nav>
+
+<br><br><br><br>
+
+
+<div class="container container-quiz">
+
+	<h1>Quiz Game</h1>
+
+	<br>
+
+
+	<div class="table-responsive-xl">
+
+		<table class="table table-dark table-quiz table-borderless">
+
+		<tr>
+			<td colspan="3">
+				<h3>Quiz 1: Roles</h3>
+				<p>Please drag the champion and drop it into the box with the matching roles.</p>
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="../resources/images/assassin.png" title="Assassin" width="50px" class="roles-icon" style="padding-bottom: 10px; cursor: pointer">
+				<h4>Assassin</h4>
+				<div id="box1-quiz-one" class="box"></div>
+			</td>
+
+			<td>
+				<img src="../resources/images/mage.png" title="Mage" width="50px" class="roles-icon" style="padding-bottom: 10px; cursor: pointer">
+				<h4>Mage</h4>
+				<div id="box2-quiz-one" class="box"></div>
+			</td>
+
+			<td>
+				<img src="../resources/images/marksman.png" title="Marksman" width="50px" class="roles-icon" style="padding-bottom: 10px; cursor: pointer">
+				<h4>Marksman</h4>
+				<div id="box3-quiz-one" class="box"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3" id="origin" class="origin">
+				<br>
+				<p>Choose</p>
+
+				<img src="../resources/quiz/miss_fortune.jpg" id="miss_fortune" title="Miss Fortune" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/alistar.jpg" id="alistar" title="Alistar" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/katarina.jpg" id="katarina" title="Katarina" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/darius.jpg" id="darius" title="Darius" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/lux.jpg" id="lux" title="Lux" width="180px" draggable="true" style="border-radius: 15px" />
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3">
+				<input type="button" value="Check Answer" id="btnCheck" class="btnCheck" title="Check Answer" />
+				<input type="button" value="Reset" id="btnReset" class="btnReset" title="Reset" />
+				<input type="button" value="Next Quiz" id="btnNextLvl" title="Next Quiz" />
+			</td>
+		</tr>
+
+
+		<tr id="row_output_answer">
+			<th colspan="3" class="text-center">
+				<hr>
+				<div id="output_answer" style="padding-bottom: 20px"></div>
+			</th>
+		</tr>
+
+	</table>
+
+
+
+	<table class="table table-dark table-quiz2 table-borderless">
+
+		<tr>
+			<td colspan="3">
+				<h4>Quiz 2: Roles</h4>
+				<p>Please drag the champion and drop it into the box with the matching roles.</p>
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="../resources/images/fighter.png" title="Figther" width="50px" class="roles-icon" style="padding-bottom: 10px; cursor: pointer">
+				<h4>Figther</h4>
+				<div id="box1-quiz-two" class="box"></div>
+			</td>
+
+			<td>
+				<img src="../resources/images/tank.png" title="Tank" width="50px" class="roles-icon" style="padding-bottom: 10px; cursor: pointer">
+				<h4>Tank</h4>
+				<div id="box2-quiz-two" class="box"></div>
+			</td>
+
+			<td>
+				<img src="../resources/images/support.png" title="Support" width="50px" class="roles-icon" style="padding-bottom: 10px; cursor: pointer">
+				<h4>Support</h4>
+				<div id="box3-quiz-two" class="box"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3" id="origin2" class="origin">
+				<br>
+				<p>Choose</p>
+
+				<img src="../resources/quiz/nami.jpg" id="nami" title="Nami" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/garen.jpg" id="garen" title="Garen" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/annie.jpg" id="annie" title="Annie" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/tristana.jpg" id="tristana" title="Tristana" width="180px" draggable="true" style="border-radius: 15px" />
+				<img src="../resources/quiz/malphite.jpg" id="malphite" title="Malphite" width="180px" draggable="true" style="border-radius: 15px" />
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="3">
+				<input type="button" value="Check Answer" id="btnCheck2" class="btnCheck" title="Check Answer" />
+				<input type="button" value="Reset" id="btnReset2" class="btnReset" title="Reset" />
+			</td>
+		</tr>
+
+
+		<tr id="row_output_answer2">
+			<th colspan="3" class="text-center">
+				<hr>
+				<div id="output_answer2" style="padding-bottom: 20px"></div>
+			</th>
+		</tr>
+
+
+	</table>
+
+	</div>
+
+</div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+	<div class="modal-details">
+		<span class="close">&times;</span>
+		<h3 class="modal-title" style="color: black">You have completed all of the quiz!</h3>
+		<img src="../resources/images/firework.gif" width="80px" class="firework-icon">
+		<img src="../resources/images/lol_penguin.jpg" width="150px" class="success-icon">
+		<img src="../resources/images/firework.gif" width="80px" class="firework-icon">
+		<br><br>
+		<button id="btnAgain" class="btnAgain" title="Play Again">Play Again</button>
+		<button id="btnCancel" class="btnCancel" title="Cancel">Cancel</button>
+	</div>
+</div>
+
+
+<div class="box-environment">
+	<img src="../resources/images/lol_environment3.png" width="100%">
+</div>
+
+
+
+<!---------------------------  Scroll to Top Button --------------------------->
+<a href="#" class="scroll-to-top" title="Scroll Top">
+	<i class="fas fa-chevron-up"></i>
+</a>
+
+
+
+<!--------------------------- Footer --------------------------->
+<div class="box-footer">
+    <footer class="footer">
+    	<!----- Logo ----->
+    	<a href="home_page.html">
+    		<img src="../resources/images/lol_logo.png" width="50px">
+    	</a>
+
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="home_page.html" title="Home">Home</a></li>
+            <li class="list-inline-item"><a href="champion_page.html" title="Champions">Champions</a></li>
+            <li class="list-inline-item"><a href="game_page.html" title="Quiz Game">Quiz Game</a></li>
+        </ul>
+
+        <p class="footer-desc">League of Legends is a team-based strategy game where two teams of five powerful champions face off to destroy the other's base. Choose from over 140 champions to make epic plays, secure kills, and take down towers as you battle your way to victory.</p>
+
+        <div class="social">
+        	<a href="https://www.instagram.com/leagueoflegends/?hl=en" target="_blank" title="Instagram"><i class="icon ion-social-instagram"></i></a>
+        	<a href="https://www.youtube.com/user/RiotGamesInc" target="_blank" title="Youtube"><i class="icon ion-social-youtube"></i></a>
+        	<a href="https://www.facebook.com/leagueoflegends/" target="_blank" title="Facebook"><i class="icon ion-social-facebook"></i></a>
+        </div>
+        <hr class="footer-hr">
+        <p class="copyright">Copyright &copy; 2021 All Rights Reserved by Andrew Hew Jun Sheng.</p>
+    </footer>
+</div>
+
+
+</body>
+
+
+</html>

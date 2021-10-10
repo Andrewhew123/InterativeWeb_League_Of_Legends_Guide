@@ -1,0 +1,1103 @@
+/* --------------- Keyframe Animation --------------- */
+@keyframes fadeIn{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@keyframes pulse{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(1);}
+}
+
+@keyframes fadeInBottom{
+	from{opacity: 0; transform: translate(-50%, 100%);}
+	to{opacity: 1; transform: translate(-50%, -50%);}
+}
+
+@keyframes type{
+	0%{	
+		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #2C6BB2, 0 0 20px #2C6BB2;
+		opacity: 0;
+		width: 0ch;
+	}
+	50%{
+
+		opacity: 1;
+		width: 22ch;
+	}
+	100%{
+		text-shadow: 0 0 8px #fff, 0 0 13px #3F99FD, 0 0 18px #3F99FD, 0 0 23px #3F99FD;
+		opacity: 1;
+	}
+}
+
+
+@keyframes bounce{
+	0%{transform: translateY(0);}
+	25%{transform: translateY(-20);}
+	50%{transform: translateY(-40);}
+	75%{transform: translateY(-20);}
+	100%{transform: translateY(0);}
+}
+
+@keyframes glow{
+	from{
+		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2C6BB2, 0 0 40px #2C6BB2;
+	}
+
+	to {
+    	text-shadow: 0 0 20px #fff, 0 0 30px #3F99FD, 0 0 40px #3F99FD, 0 0 50px #3F99FD;
+  	}
+
+}
+
+
+@keyframes glow_nav{
+	from{
+		text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #2C6BB2, 0 0 25px #2C6BB2;
+	}
+
+	to {
+    	text-shadow: 0 0 15px #fff, 0 0 20px #3F99FD, 0 0 25px #3F99FD, 0 0 30px #3F99FD;
+  	}
+
+}
+
+
+@keyframes bounce_up_down {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+
+}
+
+
+@keyframes fadeLeft{
+	0%{opacity: 0; transform: translateX(-100px);}
+	100%{opacity: 1; transform: translateX(0);}
+
+}
+
+@keyframes fadeRight{
+	0%{opacity: 0; transform: translateX(100px);}
+	100%{opacity: 1; transform: translateX(0);}
+
+}
+
+@keyframes fadeUp{
+	0%{opacity: 0; transform: translateY(100px);}
+	100%{opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeDown{
+	0%{opacity: 0; transform: translateY(-100px);}
+	100%{opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp_modalbox{
+	0%{opacity: 0; transform: translate(-50%, 0);}
+	100%{opacity: 1; transform: translate(-50%, -50%);}
+}
+
+
+@keyframes pulse_in{
+	0%{transform: scale(1);}
+	50%{transform: scale(0.95);}
+	100%{transform: scale(1);}
+}
+
+@keyframes pulse_out{
+	0%{transform: scale(1);}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(1);}
+}
+
+@keyframes pulse_rotation{
+	0%{transform: scale(1); transform: rotate(5deg);}
+	50%{transform: scale(1.1); transform: rotate(-5deg);}
+	100%{transform: scale(1); transform: rotate(5deg);}
+}
+
+@keyframes anim_opacity{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: BeaufortforLOL-Bold;
+}
+
+p{
+	color: white;
+	font-family: BeaufortforLOL-Bold;
+	font-weight: normal;
+}
+
+h1{
+	font-family: BeaufortforLOL-Bold;
+	color: white;
+}
+
+h2{
+	font-family: BeaufortforLOL-Bold;
+	color: white;
+}
+
+h3{
+	font-family: BeaufortforLOL-Bold;
+	color: white;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+hr{
+	background-color: white;
+	opacity: 0.5;
+}
+
+
+a:hover{
+
+	color: white;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+
+a, a:active, a:focus {
+   outline: none;
+}
+
+abbr a{
+	outline: none;
+}
+
+/*bg*/
+.bg-one{
+	background-image: url('../resources/images/bg1-1.jpg');
+}
+
+.bg-two{
+	background-image: url('../resources/images/bg2-1.jpg');
+}
+
+.bg-three{
+	background-image: url('../resources/images/bg3-1.jpg');
+}
+
+.bg-sky{
+	background-image: url('../resources/images/bgSky.jpg');
+}
+
+/*bg champion*/
+.bg-champion-ahri{
+	background-image: url('../resources/ahri/ahri_bg.jpg');
+}
+
+.bg-champion-akali{
+	background-image: url('../resources/akali/akali_bg.jpg');
+}
+
+
+.bg-champion-galio{
+	background-image: url('../resources/galio/galio_bg.jpg');
+}
+
+
+.bg-champion-janna{
+	background-image: url('../resources/janna/janna_bg.jpg');
+}
+
+
+.bg-champion-jinx{
+	background-image: url('../resources/jinx/jinx_bg.jpg');
+}
+
+.bg-champion-nasus{
+	background-image: url('../resources/nasus/nasus_bg.jpg');
+}
+
+.bg-home-menu{
+	background-image: url('../resources/images/lol_home.jpg');
+}
+
+.bg-home-menu2{
+	background-image: url('../resources/images/lol_home2-1.jpg');
+}
+
+
+/* ------------------------- Navigation bar ----------------------------- */
+
+.header{
+
+	width: 100%;
+	height: 70px;
+	background-color: #101010;
+	position: fixed;
+	z-index: 100;
+
+}
+
+.header.active{
+	background: rgb(16, 16, 16, 0.85);
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    transition: background-color 1s ease-out;
+}
+
+
+.logo{
+
+	position: absolute;
+	top: 10px;
+	left: 10%;
+
+}
+
+.logo-image{
+	width: 50px;
+	height: 50px;
+}
+
+/*menu list*/
+.menu{
+	float: right;
+	margin-right: 10%;
+}
+
+nav ul li{
+	display: inline-block;
+	line-height: 75px;
+	margin: 0 12px;
+}
+
+nav ul li a{
+	position: relative;
+	font-family: BeaufortforLOL-Bold;
+	color: white;
+	font-size: 15px;
+	text-transform: uppercase;
+	border-bottom: 4px solid transparent;
+	padding: 20px 15px;
+	transform: scale(0.5);
+	transition: 0.3s;
+
+}
+
+nav ul li a:hover{
+	border-bottom: 4px solid #13A1D5;
+	animation: glow_nav 1s ease-in-out infinite alternate;
+	transform: scale(1);
+
+}
+
+
+label #btn, 
+label #cancel{
+	color: white;
+	font-size: 30px;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+	
+}
+
+label{
+	float: right;
+}
+
+#check{
+	display: none;
+}
+
+
+/* ------------------------- Champion Menu page ----------------------------- */
+.body-champion-menu{
+
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+  	width: 100%;
+}
+
+
+.wrapper-champion-menu{
+	padding: 20px 20px;
+	width: 700px;
+	text-align: center;
+	margin: 0 auto;
+	animation-name: fadeLeft;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	opacity: 1;
+
+}
+
+.right{
+	float: right!important;
+}
+
+
+.parent-champion-menu{
+
+	margin-bottom: 20px;
+	width: 100%;
+	height: 145px;
+	border: 1px solid rgba(255, 255, 255, .5);
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+  	cursor: pointer;
+	border-radius: 10px;
+	box-shadow: 2px 10px 12px rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+}
+
+
+.child-champion-menu{
+
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+  	background-size: cover;
+  	-webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+}
+
+a.champion-name-menu{
+
+	display: none;
+	font-size: 30px;
+	font-family: BeaufortforLOL-Bold;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 50px;
+	cursor: pointer;
+
+}
+
+.parent-champion-menu:hover .child-champion-menu {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+
+}
+
+.parent-champion-menu:focus .child-champion-menu{
+	-ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.parent-champion-menu:hover .child-champion-menu:before,
+.parent-champion-menu:focus .child-champion-menu:before{
+	display: block;
+}
+
+.parent-champion-menu:hover a, .parent-champion-menu:focus a{
+	display: block;
+
+}
+
+
+
+/* ------------------------- Champion page ----------------------------- */
+.champion-bg{
+	width: 100%;
+}
+
+
+.body-champion{
+	/*background-color: #161A30;*/
+
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+  	width: 100%;
+}
+
+
+.container-champion-profile{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.champion{
+	
+	color: white;
+	font-size: 80px;
+	text-align: center;
+	margin-top: -60px;
+	font-family: BeaufortforLOL-Bold;
+	animation: glow 1s ease-in-out infinite alternate;
+
+}
+
+.ul-diff-roles{
+
+	display: flex;
+	justify-content: space-around;
+	width: 100%;	
+}
+
+
+.row-diff-roles-desc{
+	border: 2px solid rgba(255, 255, 255, .5);
+	border-radius: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+
+.box-diff-roles{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.box-champion-desc{
+	vertical-align: middle;
+	border-left: 2px solid rgba(255, 255, 255, .5);
+	
+}
+
+
+.box-champion-ability{
+	width: 100%;
+	padding-bottom: 20px;
+	position: relative;
+	display: inline-block;
+}
+
+
+.ability-title{
+	color: white;
+	font-size: 50px;
+	font-family: BeaufortforLOL-Bold;
+}
+
+
+h3 .ability-name{
+	font-size: 50px;
+}
+
+
+.champion-ability{
+	padding:10px;
+	text-align: justify;
+	width: 70px;
+	height: 70px;
+	margin-right: 5px;
+	cursor: pointer;
+	transition: 0.5s;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+
+#champion-ability1{
+	border: 1px solid white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px white;
+
+}
+
+
+.champion-ability:hover{
+	/*border: 1px solid white;
+	border-radius: 10px 0px 10px 0px;*/
+	padding: 12px;
+
+}
+
+
+
+
+/* --------------- Ability Details --------------- */
+.ability2-details{
+	display: none;
+
+}
+
+.ability3-details{
+	display: none;
+
+}
+
+.ability4-details{
+	display: none;
+	
+}
+
+
+/* --------------- Ability Video --------------- */
+.video-ability1{
+	margin-bottom: 20px;
+	border-radius: 15px 15px 15px 15px;
+}
+
+.video-ability2{
+	margin-bottom: 20px;
+	border-radius: 15px 15px 15px 15px;
+	display: none;
+}
+
+.video-ability3{
+	margin-bottom: 20px;
+	border-radius: 15px 15px 15px 15px;
+	display: none;
+}
+
+.video-ability4{
+	margin-bottom: 20px;
+	border-radius: 15px 15px 15px 15px;
+	display: none;
+
+}
+
+
+/* --------------- Audio --------------- */
+#narrator{
+	cursor: pointer;
+
+}
+
+
+/* --------------- Builds --------------- */
+.box-img-champion{
+	position: relative;
+	z-index: -1;
+}
+
+.img-champion{
+	animation-name: pulse_out;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+
+.build-title{
+	font-size: 50px;
+}
+
+#core-items-option{
+	width: 33.33%;
+	height: 50px;
+	transition: 0.3s;
+	background-color: #4d4d4d;
+	cursor: pointer;
+
+}
+
+
+#starter-items-option{
+	width: 33.33%;
+	height: 50px;
+	transition: 0.3s;
+	cursor: pointer;
+	color: #aaa;
+}
+
+
+#boots-option{
+	width: 33.33%;
+	height: 50px;
+	transition: 0.3s;
+	cursor: pointer;
+	color: #aaa;
+}
+
+.box-builds{
+	margin-top: -80;
+}
+
+
+.table-core-items{
+	display: table;
+}
+
+.table-starter-items{
+	display: none;
+}
+
+.table-boots{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* navbar menu for desktop */
+@media screen and (max-width: 1000px){
+
+	/* --------------- Adjust logo and navbar size ------------------- */
+	nav ul li a{
+		font-size: 12px;
+	}
+
+}
+
+/* Hamburger menu for tablet and mobile*/
+@media screen and (max-width:800px){
+
+	/* --------------- Hamburger menu ------------------- */
+	label #btn{
+		display: block;
+	}
+
+	.menu{
+		position: fixed;
+		width: 100%;
+		height: 95vh;
+		top: 70px;
+		background: rgb(16, 16, 16, 0.85);
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+		display: flex;
+	  	flex-direction: column;
+	  	align-items: center;
+	  	justify-content: center;
+	}
+
+
+	nav ul li{
+
+		vertical-align: center;
+		display: block;
+		line-height: 70px;
+	}
+
+	nav ul li a{
+		font-size: 20px;
+		padding: 10px 15px;
+	}
+
+	#check:checked ~ ul{
+		left: 0;
+	}
+
+	#check:checked ~ label #btn{
+		display: none;
+	}
+
+	#check:checked ~ label #cancel{
+		display: block;
+	}
+
+}
+
+/* Hamburger menu for small size of mobile screen*/
+@media screen and (max-width:350px){
+	.menu{
+		height: 85vh;
+	}
+	nav ul li a{
+		font-size: 15px;
+		padding: 5px 10px;
+	}
+
+	nav ul li{
+		line-height: 50px;
+	}
+
+
+}
+/* --------------- End of Navigation bar ------------------- */
+
+
+
+/* --------------- Scroll to Top ------------------- */
+.scroll-to-top{
+	background-color: white;
+	position: fixed;
+	bottom: 16px;
+	right: 32px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+	color: #0E437E;
+	text-decoration: none;
+	opacity: 0;
+	pointer-events: none;
+	transition: all .4s;
+	z-index: 99;
+}
+
+.scroll-to-top:hover{
+	background-color: #0E437E;
+	color: white;
+}
+
+.scroll-to-top.active{
+    bottom: 32px;
+	pointer-events: auto;
+	opacity: 1;
+}
+
+
+
+/* --------------- Footer ------------------- */
+.box-footer {
+  padding:40px 0;
+  background-color: black;
+  color:#4b4c4d;
+  text-align: center;
+}
+
+.footer{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.box-footer ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.box-footer li {
+  padding:0 10px;
+}
+
+.box-footer ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+  font-family: BeaufortforLOL-Bold;
+  text-transform: uppercase;
+}
+
+.box-footer ul a:hover {
+  opacity:1;
+  color: white;
+}
+
+.footer-desc{
+	color: inherit;
+}
+
+.box-footer .social {
+  text-align:center;
+  padding-bottom:15px;
+  padding-top: 15px;
+
+}
+
+.box-footer .social > a {
+  font-size:30px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  opacity:0.75;
+  padding-top: 5px;
+}
+
+.box-footer .social > a:hover {
+  opacity:0.9;
+  color: white;
+}
+
+.box-footer .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+
+
+/* --------------- Champion page --------------- */
+.champion-desc{
+	text-align: justify;
+}
+
+
+/* --------------- Home page --------------- */
+/*Scroll down button*/
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  margin-left: -16px;
+  margin-top: -100px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce_up_down 2s infinite 2s;
+  animation: bounce_up_down 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+
+
+
+/*Tablet*/
+@media only screen and (max-width: 767px){
+
+	.champion{
+		font-size: 45px;
+		margin-top: -30;
+	}
+
+
+	/* --------------- Champion page --------------- */
+	.box-champion-ability{
+		text-align: center;
+	}
+
+	.champion-desc{
+		padding-top: 15px;
+	}
+
+	.ability-title{
+		font-size: 45px;
+	}
+
+	h3.ability-name{
+		font-size: 30px;
+	}
+
+	.wrapper-champion-menu{
+		width: 90%;
+	}
+
+
+	.box-champion-desc{
+		border-left: none;
+		border-top: 2px solid rgba(255, 255, 255, .5);
+
+	}
+
+
+	.build-title{
+		font-size: 45px;
+	}
+
+
+
+	/* --------------- Home page --------------- */
+	.box-lol-map img{
+		top: 150px;
+	}
+
+	.wrapper-home-menu{
+		width: 90%;
+		margin-top: 200px;
+	}
+
+	.cover-slide-image{
+		height: 300px;
+	}
+
+	.slide-image{
+		
+		height: 350px;
+	}
+
+	.slide-logo{
+		padding-top: 100px;
+	}
+
+
+	/* --------------- Home Page --------------- */
+	.body-champion-menu{
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+	  	background-size: cover;
+	  	width: 100%;
+	}
+
+
+	/* --------------- Quiz Game Page --------------- */
+	.modal-details{
+		width: 70%;
+	}
+
+	.success-icon{
+		width: 70px;
+	}
+
+	.firework-icon{
+		width: 35px;
+	}
+	
+
+	/* --------------- Footer --------------- */
+	.footer-desc{
+		text-align: justify;
+	}
+
+}
+
+
+/*Mobile*/
+@media only screen and (max-width: 420px){
+
+	h3{
+		font-size: 30px;
+	}
+
+
+	.champion{
+		font-size: 30px;
+		margin-top: -20;
+	}
+
+	/* --------------- Champion images and audio --------------- */
+
+	.ability-title{
+		font-size: 30px;
+	}
+
+	h3.ability-name{
+		font-size: 20px;
+	}
+
+	.build-title{
+		font-size: 30px;
+	}
+
+
+	/* --------------- Champion menu --------------- */
+	a.champion-name-menu{
+
+		height: 35px;
+		font-size: 20px;
+	}
+
+
+	/* --------------- Home Page --------------- */
+	.parent-home-menu{
+		height: 200px;
+	}
+
+	.lol_logo_home{
+		width: 100px;
+	}
+
+	a.home-menu{
+		font-size: 20px;
+		height: 20px;
+	}
+
+
+	.box-lol-map img{
+
+		top: 200px;
+		width: 280px;
+	}
+
+	.wrapper-home-menu{
+		margin-top: 120px;
+	}
+
+
+	/* --------------- Quiz Game Page --------------- */
+	.modal-details{
+		width: 80%;
+	}
+
+	.success-icon{
+		width: 60px;
+	}
+
+	.firework-icon{
+		width: 30px;
+	}
+
+	.modal-title{
+		font-size: 20px;
+	}
+
+
+
+}
