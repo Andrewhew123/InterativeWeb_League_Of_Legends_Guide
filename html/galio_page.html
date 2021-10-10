@@ -5,13 +5,14 @@
 
 	/*font type 1*/
 	font-family: 'Playball Regular';
-	src: url('font/Playball-Regular.ttf');
+	src: url('../font/Playball-Regular.ttf');
 
 	/*font type 2*/
 	font-family: 'BeaufortforLOL-Bold';
-	src: url('font/BeaufortforLOL-Bold.woff.ttf');
+	src: url('../font/BeaufortforLOL-Bold.woff.ttf');
 }
 </style>
+
 
 
 
@@ -45,13 +46,13 @@ function playSound(){
 
 	if (!playing) {
 		sound.play();
-		narrator.src = "resources/images/audio-on2.gif";
+		narrator.src = "../resources/images/audio-on2.gif";
 		playing=true;
 
 		audio_output.textContent = "Audio On";
 
 	}else{
-		narrator.src = "resources/images/audio-off2.png";
+		narrator.src = "../resources/images/audio-off2.png";
 		sound.pause();
 		playing=false;
 
@@ -72,7 +73,7 @@ function narrator_audio(){
 		narrator = document.getElementById("narrator");
 		audio_output = document.getElementById("audio-output");
 
-		narrator.src = "resources/images/audio-off2.png";
+		narrator.src = "../resources/images/audio-off2.png";
 		audio_output.textContent = "Press Audio";
 
 	});
@@ -365,15 +366,15 @@ window.addEventListener("load", init, false);
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap_css/bootstrap.min.css"/>
-	<script src="js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap_css/bootstrap.min.css"/>
+	<script src="../js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="css/style_lol.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style_lol.css"/>
 
 	<!-- JS/JQ -->
-	<script type="text/javascript" src="js/JQuery3.3.1.js"></script>
-	<script type="text/javascript" src="js/javascript_lol.js"></script>
+	<script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+	<script type="text/javascript" src="../js/javascript_lol.js"></script>
 	
 	
 
@@ -393,7 +394,7 @@ window.addEventListener("load", init, false);
 	</label>
 
 	<a href="home_page.html" title="League of Legends" class="logo">
-		<img src="resources/images/lol_logo.png" class="logo_image" width="50px">
+		<img src="../resources/images/lol_logo.png" class="logo_image" width="50px">
 	</a>
 
 	
@@ -416,9 +417,9 @@ window.addEventListener("load", init, false);
 <div class="container container-champion-profile">
 	
 
-	<img src="resources/janna/janna_bg.jpg" class="champion-bg">
+	<img src="../resources/galio/galio_bg.jpg" class="champion-bg">
 
-	<h1 class="champion">Janna</h1>
+	<h1 class="champion">Galio</h1>
 
 	<br><br>
 
@@ -431,18 +432,18 @@ window.addEventListener("load", init, false);
 				<!---------- Champion Roles ---------->
 				<li class="text-center">
 					<div>
-						<img src="resources/images/support.png" class="img-fluid img-roles" alt="Responsive image" width="60px">
+						<img src="../resources/images/tank.png" class="img-fluid img-roles" alt="Responsive image" width="60px">
 					</div>
 					<div>
 						<h6 style="color: white">ROLE</h6>
-						<h6 style="color: #F5BA11">SUPPORT</h6>
+						<h6 style="color: #F5BA11">TANK</h6>
 					</div>
 				</li>
 
 				<!---------- Champion Difficulty ---------->
 				<li class="text-center">
 					<div>
-					<img src="resources/images/difficulty_2.png" class="img-fluid img-diff" alt="Responsive image" width="100px">
+					<img src="../resources/images/difficulty_2.png" class="img-fluid img-diff" alt="Responsive image" width="100px">
 					</div>
 					<div>
 						<h6 style="color: white">DIFFICULTY</h6>
@@ -453,7 +454,7 @@ window.addEventListener("load", init, false);
 				<!---------- Champion Audio Icon ---------->
 				<li class="text-center align-middle pt-4">
 					<div>
-						<img id="narrator" src="resources/images/audio-off2.png" alt="Responsive image" class="img-fluid" width="50px"/>
+						<img id="narrator" src="../resources/images/audio-off2.png" alt="Responsive image" class="img-fluid" width="50px"/>
 					</div>
 					<div class="pt-2">
 						<h6 style="color: white" id="audio-output">Press Audio</h6>
@@ -466,7 +467,7 @@ window.addEventListener("load", init, false);
 
 
 		<div class="col-md-6 col-xs-12 box-champion-desc my-auto">
-			<p class="champion-desc">Armed with the power of Runeterra's gales, Janna is a mysterious, elemental wind spirit who protects the dispossessed of Zaun. Some believe she was brought into existence by the pleas of Runeterra's sailors who prayed for fair winds as they navigated treacherous waters and braved rough tempests. Her favor and protection has since been called into the depths of Zaun, where Janna has become a beacon of hope to those in need. No one knows where or when she will appear, but more often than not, she's come to help.</p>
+			<p class="champion-desc">Outside the gleaming city of Demacia, the stone colossus Galio keeps vigilant watch. Built as a bulwark against enemy mages, he often stands motionless for decades until the presence of powerful magic stirs him to life. Once activated, Galio makes the most of his time, savoring the thrill of a fight and the rare honor of defending his countrymen. But his triumphs are always bittersweet, for the magic he destroys is also his source of reanimation, and each victory leaves him dormant once again.</p>
 		</div>
 
 	</div>
@@ -484,23 +485,23 @@ window.addEventListener("load", init, false);
 		    	<!---------- Video (Ability 1) ---------->
 		
 				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability1">
-					<source src="resources/janna/janna_ability1.webm" type="video/webm">
+					<source src="../resources/galio/galio_ability1.webm" type="video/webm">
 				</video>
 
 
 				<!---------- Video (Ability 2) ---------->
 
   				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability2">
-					<source src="resources/janna/janna_ability2.webm" type="video/webm">
+					<source src="../resources/galio/galio_ability2.webm" type="video/webm">
 				</video>
 
 				<!---------- Video (Ability 3) ---------->
 				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability3">
-					<source src="resources/janna/janna_ability3.webm" type="video/webm">
+					<source src="../resources/galio/galio_ability3.webm" type="video/webm">
 				</video>
 
 				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability4">
-					<source src="resources/janna/janna_ability4.webm" type="video/webm">
+					<source src="../resources/galio/galio_ability4.webm" type="video/webm">
 				</video>
 		    			      
 		    </div>
@@ -512,45 +513,45 @@ window.addEventListener("load", init, false);
 			<div class="box-champion-ability">
 
 				<!---------- Image Icon (Ability 1) ---------->
-				<img src="resources/janna/janna_ability_icon1.PNG" class="champion-ability" id="champion-ability1" title="Howling Gale">
+				<img src="../resources/galio/galio_ability_icon1.PNG" class="champion-ability" id="champion-ability1" title="Winds of War">
 
 				<!---------- Image Icon (Ability 2) ---------->
-				<img src="resources/janna/janna_ability_icon2.PNG" class="champion-ability" id="champion-ability2" title="Fzephyr">
+				<img src="../resources/galio/galio_ability_icon2.PNG" class="champion-ability" id="champion-ability2" title="Shield of Durand">
 
 				<!---------- Image Icon (Ability 3) ---------->
-				<img src="resources/janna/janna_ability_icon3.PNG" class="champion-ability" id="champion-ability3" title="Eye of the Storm">
+				<img src="../resources/galio/galio_ability_icon3.PNG" class="champion-ability" id="champion-ability3" title="Justice Punch">
 
 				<!---------- Image Icon (Ability 4) ---------->
-				<img src="resources/janna/janna_ability_icon4.PNG" class="champion-ability" id="champion-ability4" title="Monsoon">
+				<img src="../resources/galio/galio_ability_icon4.PNG" class="champion-ability" id="champion-ability4" title="Hero's Entrance">
 
 			</div>
 
 			<!---------- Details (Ability 1) ---------->
 		    <div class="pt-3 ability1-details">
 		    	<p style="color: #aaa;">Q</p>
-		    	<h3 class="ability-name">HOWLING GALE</h3>
-		    	<p class="text-justify">By creating a localized change in pressure and temperature, Janna is able to create a small storm that grows in size with time. She can activate the spell again to release the storm. On release this storm will fly towards the direction it was cast in, dealing damage and knocking away any enemies in its path.</p>
+		    	<h3 class="ability-name">WINDS OF WAR</h3>
+		    	<p class="text-justify">Galio fires two windblasts that converge into a large tornado that deals damage over time.</p>
 		    </div>
 
 		    <!---------- Details (Ability 2) ---------->
 		    <div class="pt-3 ability2-details">
 		    	<p style="color: #aaa;">W</p>
-		    	<h3 class="ability-name">FZEPHYR</h3>
-		    	<p class="text-justify">Janna summons an air elemental that passively increases her Movement Speed and enables her to pass through units. She may also activate this ability to deal damage and slow an enemy's Movement Speed. The passive is lost while this ability is on cooldown.</p>
+		    	<h3 class="ability-name">SHIELD OF DURAND</h3>
+		    	<p class="text-justify">Galio charges a defensive stance, moving slowly. Upon releasing the charge, Galio will taunt and damage nearby enemies.</p>
 		    </div>
 
 		    <!---------- Details (Ability 3) ---------->
 		    <div class="pt-3 ability3-details">
 		    	<p style="color: #aaa;">E</p>
-		    	<h3 class="ability-name">EYE OF THE STORM</h3>
-		    	<p class="text-justify">Janna conjures a defensive gale that shields an ally champion or turret from incoming damage and increases their Attack Damage.</p>
+		    	<h3 class="ability-name">JUSTICE PUNCH</h3>
+		    	<p class="text-justify">Galio will briefly step back and charge, knocking up the first enemy champion he encounters.</p>
 		    </div>
 
 		    <!---------- Details (Ability 4) ---------->
 		    <div class="pt-3 ability4-details">
 		    	<p style="color: #aaa;">R</p>
-		    	<h3 class="ability-name">MONSOON</h3>
-		    	<p class="text-justify">Janna surrounds herself in a magical storm, throwing enemies back. After the storm has settled, soothing winds heal nearby allies while the ability is active.</p>
+		    	<h3 class="ability-name">HERO'S ENTRANCE</h3>
+		    	<p class="text-justify">Galio designates an ally's position as his landing spot, granting all allies in the area a magic shield. After a delay Galio smashes down location, knocking up nearby enemies.</p>
 		    </div>
 		</div>
 	</div>
@@ -559,9 +560,10 @@ window.addEventListener("load", init, false);
 	<br><br>
 
 
+
 	<!---------- Champion Images ---------->
 	<div class="text-center box-img-champion">
-		<img src="resources/janna/janna.png" class="img-fluid img-champion" width="60%" alt="Responsive image">
+		<img src="../resources/galio/galio.png" class="img-fluid img-champion" width="60%" alt="Responsive image">
 	</div>
 
 	<div class="table-responsive-xl box-builds">
@@ -590,74 +592,71 @@ window.addEventListener("load", init, false);
 
 			<tbody>
 
-				<tr title="Imperial Mandate">
+				<tr title="Hextech Rocketbelt">
 					<td class="align-middle">
-						<img src="resources/items/imperial_mandate.png" width="50px" style="border-radius: 30px;">
+						<img src="../resources/items/hextech_rocketbelt.png" width="50px" style="border-radius: 30px;">
 					</td>
-					<td class="align-middle">Imperial Mandate</td>
+					<td class="align-middle">Hextech Rocketbelt</td>
 					<td class="align-middle">
-						Defer damage until later.<br>
-						- 40 Ability Power<br>
-						- 200 Health<br>
-						- 20 Ability haste<br>
-						- 100% Base Mana Regen
-						Cost: <span style="color: #FFBF00;">2500(750)</span>
-					</td>
-				</tr>
-
-				<tr title="Staff of Flowing Water">
-					<td class="align-middle">
-						<img src="resources/items/staff_of_flowing_water.png" width="50px">
-					</td>
-					<td class="align-middle">Staff of Flowing Water</td>
-					<td class="align-middle">
-						Your heals and shields reduce crowd control and grant movement speed<br>
-						- 50 Ability Power<br>
-						- 10% Heal and Shield Power<br>
-						- 100% Base Mana Regen<br><br>
-						Cost: <span style="color: #FFBF00;">2300(630)</span>
+						- Active to dash forward and unleash a fiery explosion<br>
+						- 90 Ability Power<br>
+						- 350 Health<br>
+						- 15 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">3200(900)</span>
 					</td>
 				</tr>
 
-				<tr title="Ardent Censer">
+				<tr title="Zhonya's Hourglass">
 					<td class="align-middle">
-						<img src="resources/items/ardent_censer.png" width="50px">
+						<img src="../resources/items/zhonya_hourglass.png" width="50px">
 					</td>
-					<td class="align-middle">Ardent Censer</td>
+					<td class="align-middle">Zhonya's Hourglass</td>
 					<td class="align-middle">
-						Shield and heal effects on other units grant both of you Attack Speed and their attacks deal additional on-hit magic damages.<br>
-						- 60 Ability Power<br>
-						- 10% Heal and Shield Power<br>
-						- 100% Base Mana Regen<br><br>
-						Cost: <span style="color: #FFBF00;">2300(630)</span>
-					</td>
-				</tr>
-
-				<tr title="Chemtech Putrifier">
-					<td class="align-middle">
-						<img src="resources/items/chemtech_putrifier.png" width="50px">
-					</td>
-					<td class="align-middle">Chemtech Putrifier</td>
-					<td class="align-middle">
-						- 50 Ability Power<br>
-						- 20 Ability Haste<br>
-						- 100% Base Mana Regen<br><br>
-						Cost: <span style="color: #FFBF00;">2300(550)</span>
+						Activate to become invincible but unable to take actions<br>
+						- 65 Ability Power<br>
+						- 45 Armor<br>
+						- 10 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">2600(50)</span>
 					</td>
 				</tr>
 
-				<tr title="Redemption">
+				<tr title="Morellonomicon">
 					<td class="align-middle">
-						<img src="resources/items/redemption.png" width="50px">
+						<img src="../resources/items/morellonomicon.png" width="50px">
 					</td>
-					<td class="align-middle">Redemption</td>
+					<td class="align-middle">Morellonomicon</td>
 					<td class="align-middle">
-						Activate to heal allies and damage enemies in an area<br>
-						- 20% Heal and Shield Power<br>
-						- 200 Health<br>
-						- 15 Ability Haste<br>
-						- 100% Base Mana Regen<br><br>
-						Cost: <span style="color: #FFBF00;">2300(700)</span>
+						Increases Magic Damage<br>
+						- 80 Ability Power<br>
+						- 250 Health<br>
+						- 10 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">2500(450)</span>
+					</td>
+				</tr>
+
+				<tr title="Void Staff">
+					<td class="align-middle">
+						<img src="../resources/items/void_staff.png" width="50px">
+					</td>
+					<td class="align-middle">Void Staff</td>
+					<td class="align-middle">
+						Increase Magic Damage<br>
+						- 70 Ability Power<br>
+						- 40% Magic Penetration<br><br>
+						Cost: <span style="color: #FFBF00;">2700(600)</span>
+					</td>
+				</tr>
+
+				<tr title="Mejai's Soulstealer">
+					<td class="align-middle">
+						<img src="../resources/items/mejai_soulstealer.png" width="50px">
+					</td>
+					<td class="align-middle">Mejai's Soulstealer</td>
+					<td class="align-middle">
+						Grants Ability Power for kills and assists<br>
+						- 20 Ability Power<br>
+						- 100 Health<br><br>
+						Cost: <span style="color: #FFBF00;">1600(1250)</span>
 					</td>
 				</tr>
 
@@ -676,25 +675,34 @@ window.addEventListener("load", init, false);
 
 			<tbody>
 
-				<tr title="Spellthief's Edge">
+				<tr title="Doran's Ring">
 					<td class="align-middle">
-						<img src="resources/starter_items/spellthief_edge.png" width="50px">
+						<img src="../resources/starter_items/doran_ring.png" width="50px">
 					</td>
-					<td class="align-middle">Spellthief's Edge</td>
+					<td class="align-middle">Doran's Ring</td>
 					<td class="align-middle">
-						Gain gold and upgrade by damaging enermy champions<br>
-						- 8 Ability Power<br>
-						- 10 Health<br>
-						- 50% Base Mana Regen<br>
-						- 2 Gold Per 10 Seconds<br><br>
+						Good Starting Item for casters<br>
+						-15 Ability Power<br>
+						-70 Health<br><br>
 						Cost: <span style="color: #FFBF00;">400(400)</span>
+					</td>
+				</tr>
+
+				<tr title="Corrupting Potion">
+					<td class="align-middle">
+						<img src="../resources/starter_items/corrupting_potion.png" width="50px">
+					</td>
+					<td class="align-middle">Corrupting Potion</td>
+					<td class="align-middle">
+						Restores Health and Mana over time and boosts combat power<br><br>
+						Cost: <span style="color: #FFBF00;">500(350)</span>
 					</td>
 					
 				</tr>
 
 				<tr title="Health Potion">
 					<td class="align-middle">
-						<img src="resources/starter_items/health_potion.png" width="50px">
+						<img src="../resources/starter_items/health_potion.png" width="50px">
 					</td>
 					<td class="align-middle">Health Potion</td>
 					<td class="align-middle">
@@ -718,43 +726,48 @@ window.addEventListener("load", init, false);
 			</thead>
 
 			<tbody>
-				<tr title="Mobility Boots">
+				<tr title="Mercury's Treads">
 					<td class="align-middle">
-						<img src="resources/boots/mobility_boots.png" width="50px">
+						<img src="../resources/boots/mercury_treads.png" width="50px">
 					</td>
-					<td class="align-middle">Mobility Boots</td>
+					<td class="align-middle">Mercury's Treads</td>
 					<td class="align-middle">
-						Great enhances Movement Speed when out of combat<br>
-						- 25 Move Speed<br><br>
-						Cost: <span style="color: #FFBF00;">1000(700)</span>
-					</td>
-				</tr>
-
-				<tr title="Ionian Boots of Lucidity">
-					<td class="align-middle">
-						<img src="resources/boots/ionian_boots_of_lucidity.png" width="50px">
-					</td>
-					<td class="align-middle">Ionian Boots of Lucidity</td>
-					<td class="align-middle">
-						Increases Movement Speed and Cooldown Reduction<br>
-						- 20 Ability Haste<br>
-						- Sorcerer's Shoes<br>
-						- Mercury's Treads<br><br>
-						Cost: <span style="color: #FFBF00;">900(600)</span>
+						Increases Movement Speed and reduces duration of disabling effects<br>
+						- 25 Magic Resist<br>
+						- 45 Move Speed<br>
+						- 30% enacity<br><br>
+						Cost: <span style="color: #FFBF00;">1100(350)</span>
 					</td>
 				</tr>
 
-				<tr title="Boots of Swiftness">
+				<tr title="Plated Steelcaps">
 					<td class="align-middle">
-						<img src="resources/boots/boots_of_swiftness.png" width="50px">
+						<img src="../resources/boots/plated_steelcaps.png" width="50px">
 					</td>
-					<td class="align-middle">Boots of Swiftness</td>
+					<td class="align-middle">Plated Steelcaps</td>
 					<td class="align-middle">
-						Enhances Movement Speed and reduces the effect of slows<br>
-						- 60 Move Speed<br><br>
-						Cost: <span style="color: #FFBF00;">900(600)</span>
+						Enhances Movement Speed and reduces incoming basic attack damage<br>
+						- 20 Armor<br>
+						- 45 Move Speed<br>
+						- Reduces incoming damage from Attacks by 12%<br><br>
+						Cost: <span style="color: #FFBF00;">1100(500)</span>
 					</td>
 				</tr>
+
+				<tr title="Sorcerer's Shoes">
+					<td class="align-middle">
+						<img src="../resources/boots/sorcerer_shoes.png" width="50px">
+					</td>
+					<td class="align-middle">Sorcerer's Shoes</td>
+					<td class="align-middle">
+						Enhances Movement Speed and Magic damage<br>
+						- 18 Magic Penetration<br>
+						- 45 Move Speed<br><br>
+						Cost: <span style="color: #FFBF00;">1100(800)</span>
+					</td>
+				</tr>
+
+				
 
 			</tbody>
 			
@@ -770,7 +783,7 @@ window.addEventListener("load", init, false);
 <br>
 
 <div class="box-environment">
-	<img src="resources/images/lol_environment2.png" width="100%" class="bg-environment">
+	<img src="../resources/images/lol_environment2.png" width="100%" class="bg-environment">
 </div>
 
 
@@ -779,7 +792,7 @@ window.addEventListener("load", init, false);
     <footer class="footer">
     	<!----- Logo ----->
     	<a href="home_page.html">
-    		<img src="resources/images/lol_logo.png" width="50px">
+    		<img src="../resources/images/lol_logo.png" width="50px">
     	</a>
 
         <ul class="list-inline">
@@ -802,10 +815,9 @@ window.addEventListener("load", init, false);
 
 
 
-
 <!---------- Audio champion ---------->
 <audio id="sound">
-	<source src="resources/janna/janna_voice.mp3" type="audio/mp3" />
+	<source src="../resources/galio/galio_voice.mp3" type="audio/mp3" />
 </audio>
 
 

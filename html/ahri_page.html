@@ -5,11 +5,11 @@
 
 	/*font type 1*/
 	font-family: 'Playball Regular';
-	src: url('font/Playball-Regular.ttf');
+	src: url('../font/Playball-Regular.ttf');
 
 	/*font type 2*/
 	font-family: 'BeaufortforLOL-Bold';
-	src: url('font/BeaufortforLOL-Bold.woff.ttf');
+	src: url('../font/BeaufortforLOL-Bold.woff.ttf');
 }
 </style>
 
@@ -46,13 +46,13 @@ function playSound(){
 
 	if (!playing) {
 		sound.play();
-		narrator.src = "resources/images/audio-on2.gif";
+		narrator.src = "../resources/images/audio-on2.gif";
 		playing=true;
 
 		audio_output.textContent = "Audio On";
 
 	}else{
-		narrator.src = "resources/images/audio-off2.png";
+		narrator.src = "../resources/images/audio-off2.png";
 		sound.pause();
 		playing=false;
 
@@ -73,7 +73,7 @@ function narrator_audio(){
 		narrator = document.getElementById("narrator");
 		audio_output = document.getElementById("audio-output");
 
-		narrator.src = "resources/images/audio-off2.png";
+		narrator.src = "../resources/images/audio-off2.png";
 		audio_output.textContent = "Press Audio";
 
 	});
@@ -125,6 +125,7 @@ function champion_ability(){
 		video_ability1.style.animationFillMode = "forwards";
 
 
+
 		this.style.border = "1px solid white";
 		this.style.borderRadius = "10px";
 		this.style.boxShadow = "0 0 10px white";
@@ -165,6 +166,7 @@ function champion_ability(){
 		video_ability2.style.animationName = "anim_opacity";
 		video_ability2.style.animationDuration = "1s";
 		video_ability2.style.animationFillMode = "forwards";
+
 
 
 		this.style.border = "1px solid white";
@@ -209,6 +211,7 @@ function champion_ability(){
 		video_ability3.style.animationFillMode = "forwards";
 
 
+
 		this.style.border = "1px solid white";
 		this.style.borderRadius = "10px";
 		this.style.boxShadow = "0 0 10px white";
@@ -251,6 +254,7 @@ function champion_ability(){
 		video_ability4.style.animationFillMode = "forwards";
 
 
+
 		this.style.border = "1px solid white";
 		this.style.borderRadius = "10px";
 		this.style.boxShadow = "0 0 10px white";
@@ -280,6 +284,7 @@ function builds_selection(){
 	core_items = document.querySelector(".table-core-items");
 	starter_items = document.querySelector(".table-starter-items");
 	boots = document.querySelector(".table-boots");
+
 
 	core_items_option.addEventListener("click", function(){
 
@@ -318,6 +323,7 @@ function builds_selection(){
 		starter_items.style.animationName = "fadeLeft";
 		starter_items.style.animationDuration = "1s";
 		starter_items.style.animationFillMode = "forwards";
+
 
 	}, false);
 
@@ -365,15 +371,15 @@ window.addEventListener("load", init, false);
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap_css/bootstrap.min.css"/>
-	<script src="js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap_css/bootstrap.min.css"/>
+	<script src="../js/bootstrap_js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="css/style_lol.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/style_lol.css"/>
 
 	<!-- JS/JQ -->
-	<script type="text/javascript" src="js/JQuery3.3.1.js"></script>
-	<script type="text/javascript" src="js/javascript_lol.js"></script>
+	<script type="text/javascript" src="../js/JQuery3.3.1.js"></script>
+	<script type="text/javascript" src="../js/javascript_lol.js"></script>
 	
 	
 
@@ -393,7 +399,7 @@ window.addEventListener("load", init, false);
 	</label>
 
 	<a href="home_page.html" title="League of Legends" class="logo">
-		<img src="resources/images/lol_logo.png" class="logo_image" width="50px">
+		<img src="../resources/images/lol_logo.png" class="logo_image" width="50px">
 	</a>
 
 	
@@ -416,9 +422,9 @@ window.addEventListener("load", init, false);
 <div class="container container-champion-profile">
 	
 
-	<img src="resources/akali/akali_bg.jpg" class="champion-bg">
+	<img src="../resources/ahri/ahri_bg.jpg" class="champion-bg">
 
-	<h1 class="champion">Akali</h1>
+	<h1 class="champion">Ahri</h1>
 
 	<br><br>
 
@@ -431,29 +437,29 @@ window.addEventListener("load", init, false);
 				<!---------- Champion Roles ---------->
 				<li class="text-center">
 					<div>
-						<img src="resources/images/assassin.png" class="img-fluid img-roles" alt="Responsive image" width="60px">
+						<img src="../resources/images/mage.png" class="img-fluid img-roles" alt="Responsive image" width="60px">
 					</div>
 					<div>
 						<h6 style="color: white">ROLE</h6>
-						<h6 style="color: #F5BA11">ASSASSIN</h6>
+						<h6 style="color: #F5BA11">MAGE</h6>
 					</div>
 				</li>
 
 				<!---------- Champion Difficulty ---------->
 				<li class="text-center">
 					<div>
-					<img src="resources/images/difficulty_3.png" class="img-fluid img-diff" alt="Responsive image" width="100px">
+					<img src="../resources/images/difficulty_2.png" class="img-fluid img-diff" alt="Responsive image" width="100px">
 					</div>
 					<div>
 						<h6 style="color: white">DIFFICULTY</h6>
-						<h6 style="color: #F5BA11">HIGH</h6>
+						<h6 style="color: #F5BA11">MODERATE</h6>
 					</div>
 				</li>	
 
 				<!---------- Champion Audio Icon ---------->
 				<li class="text-center align-middle pt-4">
 					<div>
-						<img id="narrator" src="resources/images/audio-off2.png" alt="Responsive image" class="img-fluid" width="50px"/>
+						<img id="narrator" src="../resources/images/audio-off2.png" alt="Responsive image" class="img-fluid" width="50px"/>
 					</div>
 					<div class="pt-2">
 						<h6 style="color: white" id="audio-output">Press Audio</h6>
@@ -466,7 +472,7 @@ window.addEventListener("load", init, false);
 
 
 		<div class="col-md-6 col-xs-12 box-champion-desc my-auto">
-			<p class="champion-desc">Abandoning the Kinkou Order and her title of the Fist of Shadow, Akali now strikes alone, ready to be the deadly weapon her people need. Though she holds onto all she learned from her master Shen, she has pledged to defend lonia from its enemies, one kill at a time. Akali may strike in silence, but her message will be heard loud and clear: fear the assassin with no master.</p>
+			<p class="champion-desc">Innately connected to the latent power of Runeterra, Ahri is a vastaya who can reshape magic into orbs of raw energy. She revels in toying with her prey by manipulating their emotions before devouring their life essence. Despite her predatory nature, Ahri retains a sense of empathy as she receives flashes of memory from each soul she consumes.</p>
 		</div>
 
 	</div>
@@ -484,23 +490,24 @@ window.addEventListener("load", init, false);
 		    	<!---------- Video (Ability 1) ---------->
 		
 				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability1">
-					<source src="resources/akali/akali_ability1.webm" type="video/webm">
+					<source src="../resources/ahri/ahri_ability1.webm" type="video/webm">
 				</video>
 
 
 				<!---------- Video (Ability 2) ---------->
 
   				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability2">
-					<source src="resources/akali/akali_ability2.webm" type="video/webm">
+					<source src="../resources/ahri/ahri_ability2.webm" type="video/webm">
 				</video>
 
 				<!---------- Video (Ability 3) ---------->
 				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability3">
-					<source src="resources/akali/akali_ability3.webm" type="video/webm">
+					<source src="../resources/ahri/ahri_ability3.webm" type="video/webm">
 				</video>
 
+				<!---------- Video (Ability 4) ---------->
 				<video autoplay muted loop controlsList ="ndownload" allowfullscreen width = "100%" class="video-ability4">
-					<source src="resources/akali/akali_ability4.webm" type="video/webm">
+					<source src="../resources/ahri/ahri_ability4.webm" type="video/webm">
 				</video>
 		    			      
 		    </div>
@@ -512,45 +519,45 @@ window.addEventListener("load", init, false);
 			<div class="box-champion-ability">
 
 				<!---------- Image Icon (Ability 1) ---------->
-				<img src="resources/akali/akali_ability_icon1.PNG" class="champion-ability" id="champion-ability1" title="Five Point Strike">
+				<img src="../resources/ahri/ahri_ability_icon1.PNG" class="champion-ability" id="champion-ability1" title="Orb of Deception">
 
 				<!---------- Image Icon (Ability 2) ---------->
-				<img src="resources/akali/akali_ability_icon2.PNG" class="champion-ability" id="champion-ability2" title="Twilight Shroud">
+				<img src="../resources/ahri/ahri_ability_icon2.PNG" class="champion-ability" id="champion-ability2" title="Fox-Fire">
 
 				<!---------- Image Icon (Ability 3) ---------->
-				<img src="resources/akali/akali_ability_icon3.PNG" class="champion-ability" id="champion-ability3" title="Shuriken Flip">
+				<img src="../resources/ahri/ahri_ability_icon3.PNG" class="champion-ability" id="champion-ability3" title="Charm">
 
 				<!---------- Image Icon (Ability 4) ---------->
-				<img src="resources/akali/akali_ability_icon4.PNG" class="champion-ability" id="champion-ability4" title="Perfect Execution">
+				<img src="../resources/ahri/ahri_ability_icon4.PNG" class="champion-ability" id="champion-ability4" title="Spirit Rush">
 
 			</div>
 
 			<!---------- Details (Ability 1) ---------->
 		    <div class="pt-3 ability1-details">
 		    	<p style="color: #aaa;">Q</p>
-		    	<h3 class="ability-name">FIVE POINT STRIKE</h3>
-		    	<p class="text-justify">Akali throws out five kunai, dealing damage based on her bonus Attack Damage and Ability Power and slowing.</p>
+		    	<h3 class="ability-name">ORB OF DECEPTION</h3>
+		    	<p class="text-justify">Ahri sends out and pulls back her orb, dealing magic damage on the way out and true damage on the way back.</p>
 		    </div>
 
 		    <!---------- Details (Ability 2) ---------->
 		    <div class="pt-3 ability2-details">
 		    	<p style="color: #aaa;">W</p>
-		    	<h3 class="ability-name">TWILIGHT SHROUD</h3>
-		    	<p class="text-justify">Akali drops a cover of smoke and briefly gains Movement Speed. While inside the shroud, Akali becomes invisible and unable to be selected by enemy spells and attacks. Attacking or using abilities will briefly reveal her.</p>
+		    	<h3 class="ability-name">FOX-FIRE</h3>
+		    	<p class="text-justify">Ahri gains a brief burst of movement speed and releases three fox-fires, that lock onto and attack nearby enemies.</p>
 		    </div>
 
 		    <!---------- Details (Ability 3) ---------->
 		    <div class="pt-3 ability3-details">
 		    	<p style="color: #aaa;">E</p>
-		    	<h3 class="ability-name">SHURIKEN FLIP</h3>
-		    	<p class="text-justify">Flip backward and fire a shuriken forward, dealing magic damage. The first enemy or smoke cloud hit is marked. Re-cast to dash to the marked target, dealing additional damage.</p>
+		    	<h3 class="ability-name">CHARM</h3>
+		    	<p class="text-justify">Ahri blows a kiss that damages and charms an enemy it encounters, instantly stopping movement abilities and causing them to walk harmlessly towards her. The target temporarily takes increased damage from Ahri.</p>
 		    </div>
 
 		    <!---------- Details (Ability 4) ---------->
 		    <div class="pt-3 ability4-details">
 		    	<p style="color: #aaa;">R</p>
-		    	<h3 class="ability-name">PERFECT EXECUTION</h3>
-		    	<p class="text-justify">Akali leaps in a direction, damaging enemies she strikes. Re-cast: Akali dashes in a direction, executing all enemies she strikes.</p>
+		    	<h3 class="ability-name">SPIRIT RUSH</h3>
+		    	<p class="text-justify">Ahri dashes forward and fires essence bolts, damaging nearby enemies. Spirit Rush can be cast up to three times before going on cooldown.</p>
 		    </div>
 		</div>
 	</div>
@@ -559,10 +566,9 @@ window.addEventListener("load", init, false);
 	<br><br>
 
 
-
 	<!---------- Champion Images ---------->
 	<div class="text-center box-img-champion">
-		<img src="resources/akali/akali2.png" class="img-fluid img-champion" width="60%" alt="Responsive image">
+		<img src="../resources/ahri/ahri.png" class="img-fluid img-champion" width="60%" alt="Responsive image">
 	</div>
 
 	<div class="table-responsive-xl box-builds">
@@ -591,35 +597,36 @@ window.addEventListener("load", init, false);
 
 			<tbody>
 
-				<tr title="Night Harvester">
+				<tr title="Everfrost">
 					<td class="align-middle">
-						<img src="resources/items/night_harvester.png" width="50px" style="border-radius: 30px;">
+						<img src="../resources/items/everfrost.png" width="50px" style="border-radius: 30px;">
 					</td>
-					<td class="align-middle">Night Harvester</td>
+					<td class="align-middle">Everfrost</td>
 					<td class="align-middle">
-						- 90 Ability Power<br>
-						- 300 Health<br>
-						- 15 Ability Haste<br><br>
-						Cost: <span style="color: #FFBF00;">3200(900)</span>
+						- 80 Ability Power<br>
+						- 250 Health<br>
+						- 600 Mana<br>
+						- 20 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">3400(450)</span>
 					</td>
 				</tr>
 
-				<tr title="Lich Bane">
+				<tr title="Cosmic Drive">
 					<td class="align-middle">
-						<img src="resources/items/lich_bane.png" width="50px">
+						<img src="../resources/items/cosmic_drive.png" width="50px">
 					</td>
-					<td class="align-middle">Lich Bane</td>
+					<td class="align-middle">Cosmic Drive</td>
 					<td class="align-middle">
-						Grants a bonus to next attack after spell cast<br>
-						- 70 Ability Power<br>
-						- 10% Move Speed<br><br>
-						Cost: <span style="color: #FFBF00;">3000(600)</span>
+						Massive amounts of Cooldown Reduction<br>
+						- 200 Health<br>
+						- 20 Ability Haste<br><br>
+						Cost: <span style="color: #FFBF00;">3000(865)</span>
 					</td>
 				</tr>
 
 				<tr title="Zhonya's Hourglass">
 					<td class="align-middle">
-						<img src="resources/items/zhonya_hourglass.png" width="50px">
+						<img src="../resources/items/zhonya_hourglass.png" width="50px">
 					</td>
 					<td class="align-middle">Zhonya's Hourglass</td>
 					<td class="align-middle">
@@ -633,7 +640,7 @@ window.addEventListener("load", init, false);
 
 				<tr title="Morellonomicon">
 					<td class="align-middle">
-						<img src="resources/items/morellonomicon.png" width="50px">
+						<img src="../resources/items/morellonomicon.png" width="50px">
 					</td>
 					<td class="align-middle">Morellonomicon</td>
 					<td class="align-middle">
@@ -647,7 +654,7 @@ window.addEventListener("load", init, false);
 
 				<tr title="Void Staff">
 					<td class="align-middle">
-						<img src="resources/items/void_staff.png" width="50px">
+						<img src="../resources/items/void_staff.png" width="50px">
 					</td>
 					<td class="align-middle">Void Staff</td>
 					<td class="align-middle">
@@ -673,22 +680,21 @@ window.addEventListener("load", init, false);
 
 			<tbody>
 
-				<tr title="Doran's Shield">
+				<tr title="Corrupting Potion">
 					<td class="align-middle">
-						<img src="resources/starter_items/doran_shield.png" width="50px">
+						<img src="../resources/starter_items/corrupting_potion.png" width="50px">
 					</td>
-					<td class="align-middle">Doran's Shield</td>
+					<td class="align-middle">Corrupting Potion</td>
 					<td class="align-middle">
-						Good defensive starting item<br>
-						- 80 Health<br><br>
-						Cost: <span style="color: #FFBF00;">450(450)</span>
+						Restores Health and Mana over time and boosts combat power<br><br>
+						Cost: <span style="color: #FFBF00;">500(350)</span>
 					</td>
 					
 				</tr>
 
 				<tr title="Doran's Ring">
 					<td class="align-middle">
-						<img src="resources/starter_items/doran_ring.png" width="50px">
+						<img src="../resources/starter_items/doran_ring.png" width="50px">
 					</td>
 					<td class="align-middle">Doran's Ring</td>
 					<td class="align-middle">
@@ -701,7 +707,7 @@ window.addEventListener("load", init, false);
 
 				<tr title="Health Potion">
 					<td class="align-middle">
-						<img src="resources/starter_items/health_potion.png" width="50px">
+						<img src="../resources/starter_items/health_potion.png" width="50px">
 					</td>
 					<td class="align-middle">Health Potion</td>
 					<td class="align-middle">
@@ -725,9 +731,23 @@ window.addEventListener("load", init, false);
 			</thead>
 
 			<tbody>
+				<tr title="Ionian Boots of Lucidity">
+					<td class="align-middle">
+						<img src="../resources/boots/ionian_boots_of_lucidity.png" width="50px">
+					</td>
+					<td class="align-middle">Ionian Boots of Lucidity</td>
+					<td class="align-middle">
+						Increases Movement Speed and Cooldown Reduction<br>
+						- 20 Ability Haste<br>
+						- Sorcerer's Shoes<br>
+						- Mercury's Treads<br><br>
+						Cost: <span style="color: #FFBF00;">900(600)</span>
+					</td>
+				</tr>
+
 				<tr title="Sorcerer's Shoes">
 					<td class="align-middle">
-						<img src="resources/boots/sorcerer_shoes.png" width="50px">
+						<img src="../resources/boots/sorcerer_shoes.png" width="50px">
 					</td>
 					<td class="align-middle">Sorcerer's Shoes</td>
 					<td class="align-middle">
@@ -740,7 +760,7 @@ window.addEventListener("load", init, false);
 
 				<tr title="Mercury's Treads">
 					<td class="align-middle">
-						<img src="resources/boots/mercury_treads.png" width="50px">
+						<img src="../resources/boots/mercury_treads.png" width="50px">
 					</td>
 					<td class="align-middle">Mercury's Treads</td>
 					<td class="align-middle">
@@ -752,21 +772,6 @@ window.addEventListener("load", init, false);
 					</td>
 				</tr>
 
-				<tr title="Plated Steelcaps">
-					<td class="align-middle">
-						<img src="resources/boots/plated_steelcaps.png" width="50px">
-					</td>
-					<td class="align-middle">Plated Steelcaps</td>
-					<td class="align-middle">
-						Enhances Movement Speed and reduces incoming basic attack damage<br>
-						- 20 Armor<br>
-						- 45 Move Speed<br>
-						- Reduces incoming damage from Attacks by 12%<br><br>
-						Cost: <span style="color: #FFBF00;">1100(500)</span>
-					</td>
-				</tr>
-
-
 			</tbody>
 			
 		</table>
@@ -775,13 +780,14 @@ window.addEventListener("load", init, false);
 	</div>
 
 
-</div>
 
+
+</div>
 
 <br>
 
 <div class="box-environment">
-	<img src="resources/images/lol_environment2.png" width="100%" class="bg-environment">
+	<img src="../resources/images/lol_environment2.png" width="100%" class="bg-environment">
 </div>
 
 
@@ -790,7 +796,7 @@ window.addEventListener("load", init, false);
     <footer class="footer">
     	<!----- Logo ----->
     	<a href="home_page.html">
-    		<img src="resources/images/lol_logo.png" width="50px">
+    		<img src="../resources/images/lol_logo.png" width="50px">
     	</a>
 
         <ul class="list-inline">
@@ -814,7 +820,7 @@ window.addEventListener("load", init, false);
 
 <!---------- Audio champion ---------->
 <audio id="sound">
-	<source src="resources/akali/akali_voice.mp3" type="audio/mp3" />
+	<source src="../resources/ahri/ahri_voice.mp3" type="audio/mp3" />
 </audio>
 
 
