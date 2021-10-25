@@ -1,2 +1,2 @@
 # lol
-This is league of legends Game Application Guide
+This is league of legends Game Application Guide.
